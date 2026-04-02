@@ -211,29 +211,47 @@ export default function BuilderSection() {
                   <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-[60%] h-[60%] object-contain relative z-10" />
                </div>
 
-                {/* 4 elements around the center "Z" - Visa, Master, bKash, Bangla QR */}
+                {/* 4 elements around the center "Z" - SVG bKash, Visa, Master, Bangla QR */}
                 {[
                   { 
-                     // bKash
-                     content: <img src="/icons/bkash.png" alt="bKash" className="w-[85%] h-[85%] object-contain" />, 
+                     // bKash SVG
+                     content: (
+                       <svg viewBox="0 0 128 128" className="w-[85%] h-[85%]">
+                         <rect width="128" height="128" rx="24" fill="#D12053"/>
+                         <path d="M40 40h48v48H40z" fill="#fff"/>
+                         <path d="M50 50h28v28H50z" fill="#D12053"/>
+                       </svg>
+                     ), 
                      x: -75, y: -75 
                   },
                   { 
-                     // Visa
-                     content: <img src="/icons/visa.png" alt="Visa" className="w-[85%] h-[85%] object-contain" />, 
+                     // Visa SVG
+                     content: (
+                       <svg viewBox="0 0 128 128" className="w-[85%] h-[85%]">
+                         <rect width="128" height="128" rx="24" fill="#1A1F71"/>
+                         <path d="M30 50h15l10 30h10l15-30h15" stroke="#fff" strokeWidth="8" fill="none"/>
+                       </svg>
+                     ), 
                      x: 75, y: -75 
                   },
                   { 
-                     // MasterCard
+                     // MasterCard SVG
                      content: (
-                       <img src="/icons/mastercard.png" alt="MasterCard" className="w-[85%] h-[85%] object-contain" />
+                       <svg viewBox="0 0 128 128" className="w-[85%] h-[85%]">
+                         <rect width="128" height="128" rx="24" fill="#000"/>
+                         <circle cx="50" cy="64" r="25" fill="#EB001B"/>
+                         <circle cx="78" cy="64" r="25" fill="#F79E1B" fillOpacity="0.8"/>
+                       </svg>
                      ), 
                      x: -75, y: 75 
                   },
                   { 
-                     // Bangla QR
+                     // Bangla QR SVG (Simplified placeholder)
                      content: (
-                        <img src="/icons/bangla-qr.png" alt="Bangla QR" className="w-[85%] h-[85%] object-contain" />
+                       <svg viewBox="0 0 128 128" className="w-[85%] h-[85%]">
+                         <rect width="128" height="128" rx="24" fill="#006A4E"/>
+                         <path d="M40 40h10v10H40zm20 0h10v10H60zm20 0h10v10H80zm-40 20h10v10H40zm40 0h10v10H80zm-40 20h10v10H40zm20 0h10v10H60zm20 0h10v10H80z" fill="#fff"/>
+                       </svg>
                      ), 
                      x: 75, y: 75 
                   }
