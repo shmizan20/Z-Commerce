@@ -211,7 +211,7 @@ export default function BuilderSection() {
                   <motion.div 
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                    className="w-full h-full relative z-10 invert-[1] brightness-[10]"
+                    className="w-full h-full relative z-10 brightness-[0] invert"
                   >
                     <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-full h-full object-contain" />
                   </motion.div>
