@@ -206,12 +206,12 @@ export default function BuilderSection() {
                  />
                ))}
 
-               {/* Perfect Central Logo (Brand Color Background) */}
-               <div className="relative h-24 w-24 bg-[#2263C1] rounded-[2.2rem] flex items-center justify-center shadow-[0_10px_40px_rgba(34,99,193,0.25)] z-20 overflow-hidden p-5 border border-white/10">
+               {/* Perfect Central Logo (Pure White) */}
+               <div className="relative h-24 w-24 bg-[#2263C1] rounded-[2.2rem] flex items-center justify-center shadow-[0_10px_40px_rgba(34,99,193,0.3)] z-20 overflow-hidden p-6 border border-white/20">
                   <motion.div 
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                    className="w-full h-full relative z-10 invert brightness-0"
+                    className="w-full h-full relative z-10 invert-[1] brightness-[10]"
                   >
                     <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-full h-full object-contain" />
                   </motion.div>
