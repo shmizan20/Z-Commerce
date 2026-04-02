@@ -195,13 +195,13 @@ export default function PricingSection() {
                 </div>
 
                 {/* Features: Compact list */}
-                <div className="space-y-1.5 flex-grow border-t border-slate-50 pt-4">
+                <div className="space-y-2 mb-2 flex-grow border-t border-slate-50 pt-4">
                   {plan.features.map((f) => (
-                    <div key={f.text} className="flex items-start gap-2">
-                       <svg className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${f.included ? "text-emerald-500" : "text-gray-300"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div key={f.text} className="flex items-start gap-2.5">
+                       <svg className={`w-4 h-4 shrink-0 mt-0.5 ${f.included ? "text-emerald-500" : "text-gray-300"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d={f.included ? "M5 13l4 4L19 7" : "M6 18L18 6M6 6l12 12"} />
                        </svg>
-                       <span className={`text-[11px] font-bold leading-tight ${f.included ? "text-slate-600" : "text-slate-300"}`}>
+                       <span className={`text-[13px] font-bold leading-tight ${f.included ? "text-slate-600" : "text-slate-300"}`}>
                          {f.text}
                        </span>
                     </div>
