@@ -208,7 +208,9 @@ function Step2_Integrations() {
                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest px-1">Payment Gateway</label>
                <div className="p-4 border border-slate-100 bg-white rounded-[2rem] flex items-center justify-between shadow-sm">
                   <div className="flex gap-5 items-start">
-                     <div className="h-14 w-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg ring-4 ring-indigo-50">💳</div>
+                     <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg ring-4 ring-indigo-50 overflow-hidden">
+                        <img src="/icons/sslcommerz.png" alt="SSL" className="w-full h-full object-contain" />
+                     </div>
                      <div className="space-y-1.5">
                         <p className="text-[17px] font-black text-slate-900 leading-none">SSLCOMMERZ</p>
                         <p className="text-[12px] font-medium text-slate-400">Secure payment gateway for Bangladesh</p>
@@ -230,13 +232,15 @@ function Step2_Integrations() {
                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest px-1">Delivery Partners</label>
                <div className="space-y-3">
                   {[
-                    { name: 'SteadFast', desc: 'Reliable nationwide courier service', icon: '📦', color: 'bg-emerald-600', tags: ["Nationwide", "COD", "Express"] },
-                    { name: 'Pathao', desc: 'Same-day delivery in Dhaka', icon: '🚀', color: 'bg-red-600', tags: ["Same Day", "Express"] },
-                    { name: 'eCourier', desc: 'Nationwide parcel delivery', icon: '🚚', color: 'bg-amber-500', tags: ["Standard", "COD"] },
+                    { name: 'SteadFast', desc: 'Reliable nationwide courier service', icon: '/icons/sTEADfast.png', color: 'bg-white', tags: ["Nationwide", "COD", "Express"] },
+                    { name: 'Pathao', desc: 'Same-day delivery in Dhaka', icon: '/icons/Pathao.png', color: 'bg-white', tags: ["Same Day", "Express"] },
+                    { name: 'eCourier', desc: 'Nationwide parcel delivery', icon: '/icons/Ecourier.png', color: 'bg-white', tags: ["Standard", "COD"] },
                   ].map((item, i) => (
                     <div key={item.name} className="p-4 border border-slate-100 bg-white rounded-[2rem] flex items-center justify-between shadow-sm">
                        <div className="flex gap-5 items-start">
-                          <div className={`h-14 w-14 ${item.color} rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg ring-4 ring-slate-50`}>{item.icon}</div>
+                          <div className={`h-14 w-14 ${item.color} rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg ring-4 ring-slate-50 overflow-hidden`}>
+                             <img src={item.icon} alt={item.name} className="w-full h-full object-contain" />
+                          </div>
                           <div className="space-y-1.5">
                              <p className="text-[17px] font-black text-slate-900 leading-none">{item.name}</p>
                              <p className="text-[12px] font-medium text-slate-400">{item.desc}</p>
@@ -370,15 +374,21 @@ function Step4_LaunchAchievement() {
 
             {/* Platform Status Bar */}
             <div className="bg-slate-50/50 border-t border-slate-100 px-6 py-2.5 flex items-center justify-between">
-               <div className="flex items-center gap-2">
-                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Payment</span>
-                  <span className="px-2 py-0.5 bg-indigo-50 text-[8px] font-black text-indigo-600 rounded-md">SSLCOMMERZ</span>
-               </div>
                <div className="flex items-center gap-3">
-                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Delivery</span>
-                  <div className="flex gap-1.5">
-                     <span className="px-2 py-0.5 bg-emerald-50 text-[8px] font-black text-emerald-600 rounded-md">SteadFast</span>
-                     <span className="px-2 py-0.5 bg-red-50 text-[8px] font-black text-red-600 rounded-md">Pathao</span>
+                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">Payment</span>
+                  <div className="h-4 w-10 overflow-hidden opacity-80">
+                    <img src="/icons/sslcommerz.png" alt="SSL" className="h-full w-full object-contain" />
+                  </div>
+               </div>
+               <div className="flex items-center gap-4">
+                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">Delivery</span>
+                  <div className="flex gap-2.5">
+                    <div className="h-4 w-8 overflow-hidden opacity-80">
+                      <img src="/icons/sTEADfast.png" alt="SteadFast" className="h-full w-full object-contain" />
+                    </div>
+                    <div className="h-4 w-8 overflow-hidden opacity-80">
+                      <img src="/icons/Pathao.png" alt="Pathao" className="h-full w-full object-contain" />
+                    </div>
                   </div>
                </div>
             </div>
