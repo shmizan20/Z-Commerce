@@ -32,7 +32,7 @@ export default function BuilderSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl lg:text-7xl font-[900] text-[#1A1C20] tracking-tight mb-6"
+            className="text-3xl sm:text-4xl lg:text-7xl font-[900] text-[#1A1C20] tracking-tight mb-4 lg:mb-6"
           >
             Design. Launch. <span className="text-[var(--primary)]">Grow.</span>
           </motion.h2>
@@ -59,7 +59,7 @@ export default function BuilderSection() {
             className="md:col-span-7 bg-white rounded-[3rem] border border-gray-100 p-8 shadow-[0_8px_40px_rgb(0,0,0,0.03)] flex flex-col hover:shadow-2xl transition-all duration-700 group overflow-hidden"
           >
             <div className="flex-1 relative flex flex-col">
-               <div className="relative w-full aspect-[16/10] bg-white rounded-[2rem] overflow-hidden flex flex-col border border-gray-50">
+               <div className="relative w-full aspect-square sm:aspect-[16/10] bg-white rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden flex flex-col border border-gray-50">
                   <div className="bg-indigo-600 px-6 py-4 flex justify-between items-center text-white relative z-20">
                      <div className="flex items-center gap-3">
                         <div className="h-8 w-8 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center">
@@ -92,24 +92,24 @@ export default function BuilderSection() {
                         </motion.div>
                      </div>
 
-                     <div className="grid grid-cols-4 gap-4">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                         {[
                           { emoji: '🍯', color: 'bg-amber-50' },
                           { emoji: '🌿', color: 'bg-emerald-50' },
                           { emoji: '🥛', color: 'bg-orange-50' },
                           { emoji: '🌾', color: 'bg-yellow-50' }
                         ].map((item, i) => (
-                          <div key={i} className="bg-slate-50/50 rounded-2xl p-3 space-y-2 border border-slate-50">
-                             <div className={`aspect-square ${item.color} rounded-xl flex items-center justify-center text-2xl`}>
+                          <div key={i} className="bg-slate-50/50 rounded-2xl p-2 sm:p-3 space-y-2 border border-slate-50">
+                             <div className={`aspect-square ${item.color} rounded-xl flex items-center justify-center text-xl sm:text-2xl`}>
                                 {item.emoji}
                              </div>
-                             <div className="space-y-1.5 mt-1">
-                                <div className="h-1.5 w-full bg-slate-900 rounded-full" />
-                                <div className="h-1.5 w-1/2 bg-slate-200 rounded-full" />
+                             <div className="space-y-1 mt-1">
+                                <div className="h-1 w-full bg-slate-900 rounded-full" />
+                                <div className="h-1 w-1/2 bg-slate-200 rounded-full" />
                              </div>
                           </div>
                         ))}
-                     </div>
+                      </div>
                   </motion.div>
                </div>
             </div>

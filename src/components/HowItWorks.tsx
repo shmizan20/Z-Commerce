@@ -39,9 +39,9 @@ export default function HowItWorks() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl lg:text-7xl font-[1000] text-[#1A1C20] tracking-tight leading-[1.05] mb-8"
+            className="text-3xl sm:text-4xl lg:text-7xl font-[1000] text-[#1A1C20] tracking-tight leading-[1.1] lg:leading-[1.05] mb-6 lg:mb-8"
           >
-            Bring your brand online <span className="text-indigo-600 italic">in 4 simple steps.</span>
+            Bring your brand online <span className="text-indigo-600 italic border-b-4 border-indigo-100 lg:border-none">in 4 steps.</span>
           </motion.h2>
           <p className="text-xl lg:text-2xl text-gray-500 font-medium max-w-3xl mx-auto leading-relaxed">
              A seamless, step-by-step experience designed to get your business online with zero stress and maximum impact.
@@ -81,9 +81,9 @@ export default function HowItWorks() {
               <button
                 key={step.num}
                 onClick={() => setActiveStep(index)}
-                className={`w-full text-left px-7 py-7 rounded-[2.2rem] transition-all duration-400 border-2 relative overflow-hidden group ${
+                className={`w-full text-left px-5 lg:px-7 py-5 lg:py-7 rounded-[1.8rem] lg:rounded-[2.2rem] transition-all duration-400 border-2 relative overflow-hidden group ${
                   activeStep === index 
-                    ? "bg-white border-indigo-600 shadow-2xl shadow-indigo-100/30 -translate-x-3 scale-[1.02]" 
+                    ? "bg-white border-indigo-600 shadow-2xl shadow-indigo-100/30 lg:-translate-x-3 scale-[1.02]" 
                     : "bg-transparent border-transparent hover:bg-white/50"
                 }`}
               >

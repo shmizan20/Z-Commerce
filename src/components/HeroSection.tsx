@@ -4,7 +4,7 @@ import StoreBuilderAnimation from "./StoreBuilderAnimation";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-64 pb-24 overflow-hidden bg-white">
+    <section className="relative min-h-screen pt-32 lg:pt-64 pb-16 lg:pb-24 overflow-hidden bg-white">
       {/* ── Stripe-style Colorful LIGHT Background (Skewed & Moving) ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         
@@ -52,7 +52,7 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-black text-[#1A1C20] leading-[1.05] tracking-tight mb-8 group">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-[#1A1C20] leading-[1.1] lg:leading-[1.05] tracking-tight mb-6 lg:mb-8 group">
               Launch your{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-[#2263C1] via-indigo-600 to-purple-600 bg-clip-text text-transparent">dream</span>
@@ -66,10 +66,10 @@ export default function HeroSection() {
             </p>
 
             {/* CTAs - Refined height (py-4) Based on user request to reduce it from previous py-20 */}
-            <div className="flex flex-wrap gap-5 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-5 mb-10 lg:mb-12">
               <a
                 href="#"
-                className="group relative inline-flex items-center justify-center gap-3 px-10 py-4 text-base font-black text-white bg-[var(--primary)] rounded-full overflow-hidden transition-all shadow-[0_20px_50px_rgba(34,99,193,0.25)] hover:scale-[1.02] active:scale-95 min-w-[200px]"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 lg:px-10 py-4 text-base font-black text-white bg-[var(--primary)] rounded-full overflow-hidden transition-all shadow-[0_20px_50px_rgba(34,99,193,0.25)] hover:scale-[1.02] active:scale-95 w-full sm:min-w-[200px]"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                 <span>Start free trial</span>
@@ -79,7 +79,7 @@ export default function HeroSection() {
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center px-10 py-4 text-base font-black text-[#1A1C20] hover:text-[var(--primary)] bg-white border-2 border-gray-100 rounded-full hover:border-[var(--primary)]/20 hover:bg-[var(--primary)]/5 transition-all hover:-translate-y-0.5 shadow-sm min-w-[200px]"
+                className="inline-flex items-center justify-center px-8 lg:px-10 py-4 text-base font-black text-[#1A1C20] hover:text-[var(--primary)] bg-white border-2 border-gray-100 rounded-full hover:border-[var(--primary)]/20 hover:bg-[var(--primary)]/5 transition-all hover:-translate-y-0.5 shadow-sm w-full sm:min-w-[200px]"
               >
                 How it works
               </a>
@@ -87,9 +87,9 @@ export default function HeroSection() {
           </div>
 
           {/* Right - Animation section */}
-          <div className="relative lg:pl-10">
+          <div className="relative lg:pl-10 lg:block mt-8 lg:mt-0">
             <div className="absolute inset-[-100px] bg-indigo-500/10 blur-[130px] rounded-full pointer-events-none" />
-            <div className="relative z-10 scale-110 lg:scale-100 origin-top">
+            <div className="relative z-10 scale-[0.85] sm:scale-100 lg:scale-100 origin-top">
               <StoreBuilderAnimation />
             </div>
           </div>

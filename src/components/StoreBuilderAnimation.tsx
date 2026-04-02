@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
  * Now features an interactive clickable stepper and a refined Achievement modal.
  */
 
-const CARD_W = "w-[620px]";
+const CARD_W = "w-full max-w-[620px]";
 
 export default function StoreBuilderAnimation() {
   const [step, setStep] = useState(0);
