@@ -206,8 +206,8 @@ export default function BuilderSection() {
                  />
                ))}
 
-               {/* Perfect Central Logo (Cleanest Representation) */}
-               <div className="relative h-24 w-24 bg-[#2263C1] rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(34,99,193,0.3)] z-20 overflow-hidden border border-white/10">
+               {/* Purest Representation: Direct Icon on Circle */}
+               <div className="relative h-24 w-24 bg-[#2263C1] rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(34,99,193,0.3)] z-20">
                   <motion.img 
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
