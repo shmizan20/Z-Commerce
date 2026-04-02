@@ -359,12 +359,18 @@ export default function StoreBuilderAnimation() {
               >
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] text-[var(--muted)]">Payment</span>
-                  <div className="px-2 py-0.5 bg-indigo-50 rounded-md text-[9px] font-bold text-indigo-600">SSLCOMMERZ</div>
+                  <div className="h-4 w-12 flex items-center justify-center opacity-80">
+                    <img src="/icons/sslcommerz.png" alt="SSL" className="h-full w-full object-contain" />
+                  </div>
                 </div>
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-3">
                   <span className="text-[10px] text-[var(--muted)]">Delivery</span>
-                  <div className="px-2 py-0.5 bg-green-50 rounded-md text-[9px] font-bold text-green-700">SteadFast</div>
-                  <div className="px-2 py-0.5 bg-red-50 rounded-md text-[9px] font-bold text-red-600">Pathao</div>
+                  <div className="h-4 w-10 overflow-hidden opacity-80">
+                    <img src="/icons/sTEADfast.png" alt="SteadFast" className="h-full w-full object-contain" />
+                  </div>
+                  <div className="h-4 w-10 overflow-hidden opacity-80">
+                    <img src="/icons/Pathao.png" alt="Pathao" className="h-full w-full object-contain" />
+                  </div>
                 </div>
               </div>
 
