@@ -137,7 +137,7 @@ export default function PricingSection() {
             return (
               <div
                 key={plan.name}
-                className={`relative rounded-3xl border-2 p-7 transition-all duration-500 bg-white flex flex-col h-full ${
+                className={`relative rounded-3xl border-2 pt-10 pb-8 px-7 transition-all duration-500 bg-white flex flex-col h-full ${
                   plan.recommended
                     ? "border-[var(--primary)] shadow-xl shadow-[var(--primary)]/10 lg:scale-[1.03] z-10"
                     : "border-[var(--border)]/60 hover:shadow-lg hover:shadow-black/5"
@@ -150,8 +150,8 @@ export default function PricingSection() {
                   </div>
                 )}
 
-                <div className="text-center mb-8">
-                  <h3 className="text-sm font-black text-[#023E8A] uppercase tracking-[0.2em] mb-3">{plan.name}</h3>
+                <div className="text-center mb-5">
+                  <h3 className="text-sm font-black text-[#023E8A] uppercase tracking-[0.2em] mb-2">{plan.name}</h3>
                   <div className="flex flex-col items-center mb-6">
                     <div className="flex items-baseline justify-center gap-1.5 mb-1">
                       <span className="text-2xl font-bold text-gray-900">৳</span>
@@ -169,10 +169,10 @@ export default function PricingSection() {
                       </div>
                     )}
                   </div>
-                  <p className="text-sm font-bold text-gray-400">{plan.description}</p>
+                  <p className="text-sm font-bold text-gray-400 mt-0">{plan.description}</p>
                 </div>
 
-                <div className="mb-8 space-y-6">
+                <div className="mb-6 space-y-4">
                    {/* Interactive Gateway Box - Back at Top */}
                    <div className="p-4 bg-slate-50/50 rounded-2xl border border-slate-100 transition-all duration-300">
                       <div className="flex items-center justify-between mb-3">
