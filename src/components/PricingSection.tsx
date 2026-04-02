@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const plans = [
   {
@@ -83,7 +83,7 @@ export default function PricingSection() {
   const [yearly, setYearly] = useState(false);
   const [gateways, setGateways] = useState<{ [key: string]: boolean }>({ "PRO": true });
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -93,7 +93,7 @@ export default function PricingSection() {
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30, scale: 0.98 },
     visible: { 
       opacity: 1, 
