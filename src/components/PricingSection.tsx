@@ -195,7 +195,7 @@ export default function PricingSection() {
                 </div>
 
                 {/* Features: Compact list */}
-                <div className="space-y-2 mb-2 flex-grow border-t border-slate-50 pt-4">
+                <div className="space-y-3.5 mb-2 flex-grow border-t border-slate-50 pt-4">
                   {plan.features.map((f) => (
                     <div key={f.text} className="flex items-start gap-2.5">
                        <svg className={`w-4 h-4 shrink-0 mt-0.5 ${f.included ? "text-emerald-500" : "text-gray-300"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
