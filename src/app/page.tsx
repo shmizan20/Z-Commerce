@@ -20,15 +20,16 @@ function SectionWrapper({ children }: { children: React.ReactNode }) {
     offset: ["start end", "end start"]
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95]);
-  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [60, 0, 0, -60]);
+  // Balanced symmetric reveal for both up and down scrolling
+  const opacity = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [0.92, 1, 1, 0.92]);
+  const y = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [40, 0, 0, -40]);
 
   return (
     <motion.div
       ref={ref}
       style={{ opacity, scale, y }}
-      className="w-full"
+      className="w-full flex flex-col"
     >
       {children}
     </motion.div>
