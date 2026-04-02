@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { useInView } from "../hooks/useInView";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -68,29 +67,55 @@ const features = [
 ];
 
 export default function FeaturesSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useInView(ref, 0.1);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } 
+    }
+  };
 
   return (
-    <section id="features" className="py-24 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <section id="features" className="py-24 lg:py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-5 px-4">
             Everything you need to run your business online.
           </h2>
           <p className="text-lg text-[var(--muted)] leading-relaxed max-w-2xl mx-auto">
             From payments to logistics, we’ve built the tools so you can focus on what matters—growing your brand.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {features.map((f, i) => (
-            <div
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+          {features.map((f) => (
+            <motion.div
               key={f.title}
-              className={`group relative bg-white rounded-3xl border border-[var(--border)]/60 p-7 transition-all duration-500 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              variants={itemVariants}
+              className="group relative bg-white rounded-3xl border border-[var(--border)]/60 p-7 transition-shadow duration-500 hover:shadow-xl hover:shadow-black/5"
             >
               <div
                 className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${f.color} flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
@@ -99,9 +124,9 @@ export default function FeaturesSection() {
               </div>
               <h3 className="text-xl font-bold text-[var(--foreground)] mb-2">{f.title}</h3>
               <p className="text-sm text-[var(--muted)] leading-relaxed">{f.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

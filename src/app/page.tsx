@@ -52,17 +52,15 @@ export default function Home() {
       
       <Navbar />
       <main className="overflow-x-hidden">
-        <section className="relative z-10">
-           <HeroSection />
-        </section>
+        <HeroSection />
         
-        <div className="flex flex-col gap-12 lg:gap-24 pb-24">
-          <SectionWrapper><FeaturesSection /></SectionWrapper>
-          <SectionWrapper><BuilderSection /></SectionWrapper>
-          <SectionWrapper><HowItWorks /></SectionWrapper>
-          <SectionWrapper><PricingSection /></SectionWrapper>
-          <SectionWrapper><FAQSection /></SectionWrapper>
-          <SectionWrapper><CTASection /></SectionWrapper>
+        <div className="flex flex-col">
+          <FeaturesSection />
+          <BuilderSection />
+          <HowItWorks />
+          <PricingSection />
+          <FAQSection />
+          <CTASection />
         </div>
       </main>
       <Footer />

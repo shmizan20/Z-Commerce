@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { useInView } from "../hooks/useInView";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const plans = [
   {
@@ -82,27 +82,55 @@ const plans = [
 export default function PricingSection() {
   const [yearly, setYearly] = useState(false);
   const [gateways, setGateways] = useState<{ [key: string]: boolean }>({ "PRO": true });
-  const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useInView(ref, 0.1);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.98 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } 
+    }
+  };
 
   const toggleGateway = (planName: string) => {
     setGateways(prev => ({ ...prev, [planName]: !prev[planName] }));
   };
 
   return (
-    <section id="pricing" className="py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
-        <div className="text-center max-w-2xl mx-auto mb-10">
+    <section id="pricing" className="py-20 lg:py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          className="text-center max-w-2xl mx-auto mb-10"
+        >
           <h2 className="text-3xl lg:text-4xl font-[900] text-[var(--foreground)] tracking-tight mb-3">
             Pricing Plans
           </h2>
           <p className="text-base text-[var(--muted)]">
             Choose the perfect plan for your business growth. 
           </p>
-        </div>
+        </motion.div>
 
         {/* Toggle - More Compact */}
-        <div className="flex items-center justify-center mb-10">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          className="flex items-center justify-center mb-10"
+        >
           <div className="inline-flex items-center p-1 bg-[#F2F5F9] rounded-full border border-[#E2E8F0]">
             <button
               onClick={() => setYearly(false)}
@@ -121,23 +149,29 @@ export default function PricingSection() {
               Yearly <span className="text-[9px] bg-green-500 text-white px-1.5 py-0.5 rounded-full">-15%</span>
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-5 items-stretch">
-          {plans.map((plan, i) => {
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          className="grid lg:grid-cols-3 gap-5 items-stretch"
+        >
+          {plans.map((plan) => {
             const hasGateway = gateways[plan.name] || false;
             const currentBasePrice = yearly ? plan.yearly : plan.monthly;
             const totalPrice = hasGateway ? (currentBasePrice + plan.gateway) : currentBasePrice;
 
             return (
-              <div
+              <motion.div
                 key={plan.name}
+                variants={cardVariants}
                 className={`relative rounded-2xl border-2 pt-6 pb-5 px-5 transition-all duration-500 bg-white flex flex-col h-full ${
                   plan.recommended
                     ? "border-[var(--primary)] lg:scale-[1.02] z-10"
                     : "border-gray-100"
-                } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                style={{ transitionDelay: `${i * 100}ms` }}
+                }`}
               >
                 {plan.recommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#023E8A] text-white text-[9px] font-black px-4 py-1 rounded-md uppercase">
@@ -207,10 +241,10 @@ export default function PricingSection() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
