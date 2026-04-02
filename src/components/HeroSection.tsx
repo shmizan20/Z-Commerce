@@ -1,14 +1,33 @@
 "use client";
 
+import { motion } from "framer-motion";
 import StoreBuilderAnimation from "./StoreBuilderAnimation";
 
 export default function HeroSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+    }
+  };
+
   return (
     <section className="relative min-h-screen pt-32 lg:pt-64 pb-16 lg:pb-24 overflow-hidden bg-white">
-      {/* ── Stripe-style Colorful LIGHT Background (Skewed & Moving) ── */}
+      {/* ── Stripe-style Colorful LIGHT Background ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        
-        {/* Large Skewed Background Blobs (Stripe Style - More Highlighted) */}
         <div 
           className="absolute top-[-25%] left-[-10%] w-[120%] h-[90%] bg-white -skew-y-12 z-0"
           style={{
@@ -20,53 +39,42 @@ export default function HeroSection() {
             `
           }}
         />
-
-        {/* Animated Color Accents - More Vibrant */}
         <div className="absolute top-[15%] right-[-10%] w-[700px] h-[700px] bg-gradient-to-br from-indigo-500/18 via-purple-500/12 to-transparent rounded-full blur-[140px] animate-pulse-slow ml-auto" />
         <div className="absolute bottom-[25%] left-[-5%] w-[600px] h-[600px] bg-gradient-to-tr from-cyan-400/18 via-blue-400/12 to-transparent rounded-full blur-[120px] animate-pulse-slow" />
-        
-        {/* Subtle Grid Texture */}
-        <div 
-          className="absolute inset-0 opacity-[0.3]"
-          style={{
-            backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)`,
-            backgroundSize: '100px 100px',
-            maskImage: 'radial-gradient(ellipse at center, black, transparent 90%)'
-          }}
-        />
-
-        {/* Mesh Grain Overlay */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.06] mix-blend-multiply" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative max-w-7xl mx-auto px-6 lg:px-8"
+      >
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-start">
           
-          {/* Left - Text */}
           <div className="max-w-xl pt-10">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-full px-4 py-1.5 mb-10 shadow-sm">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-full px-4 py-1.5 mb-10 shadow-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
               <span className="text-[10px] font-black text-[#023E8A] uppercase tracking-[0.2em]">
                 Powered by SSLWireless
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-[#1A1C20] leading-[1.1] lg:leading-[1.05] tracking-tight mb-6 lg:mb-8 group">
+            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-black text-[#1A1C20] leading-[1.1] lg:leading-[1.05] tracking-tight mb-6 lg:mb-8 group">
               Launch your{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-[#2263C1] via-indigo-600 to-purple-600 bg-clip-text text-transparent">dream</span>
                 <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#2263C1]/40 to-purple-400/40 rounded-full opacity-30 blur-sm group-hover:opacity-70 transition-opacity duration-700" />
               </span>{" "}
               website in minutes.
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg lg:text-xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
+            <motion.p variants={itemVariants} className="text-lg lg:text-xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
               The all-in-one platform to grow your brand online. Get a secure, high-performance website with integrated payments and delivery.
-            </p>
+            </motion.p>
 
-            {/* CTAs - Refined height (py-4) Based on user request to reduce it from previous py-20 */}
-            <div className="flex flex-col sm:flex-row gap-4 lg:gap-5 mb-10 lg:mb-12">
+            {/* CTAs */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 lg:gap-5 mb-10 lg:mb-12">
               <a
                 href="#"
                 className="group relative inline-flex items-center justify-center gap-3 px-8 lg:px-10 py-4 text-base font-black text-white bg-[var(--primary)] rounded-full overflow-hidden transition-all shadow-[0_20px_50px_rgba(34,99,193,0.25)] hover:scale-[1.02] active:scale-95 w-full sm:min-w-[200px]"
@@ -83,19 +91,24 @@ export default function HeroSection() {
               >
                 How it works
               </a>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right - Animation section */}
-          <div className="relative lg:pl-10 lg:block mt-8 lg:mt-0">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="relative lg:pl-10 lg:block mt-8 lg:mt-0"
+          >
             <div className="absolute inset-[-100px] bg-indigo-500/10 blur-[130px] rounded-full pointer-events-none" />
             <div className="relative z-10 scale-[0.85] sm:scale-100 lg:scale-100 origin-top">
               <StoreBuilderAnimation />
             </div>
-          </div>
+          </motion.div>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
