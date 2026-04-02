@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import Lenis from "lenis";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import FeaturesSection from "../components/FeaturesSection";
@@ -21,13 +22,13 @@ function SectionWrapper({ children }: { children: React.ReactNode }) {
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95]);
-  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [80, 0, 0, -80]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [60, 0, 0, -60]);
 
   return (
     <motion.div
       ref={ref}
       style={{ opacity, scale, y }}
-      className="w-full transition-all duration-300"
+      className="w-full"
     >
       {children}
     </motion.div>
@@ -42,6 +43,27 @@ export default function Home() {
     restDelta: 0.001
   });
 
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div className="bg-white">
       {/* Premium Scroll Progress Bar */}
@@ -54,13 +76,13 @@ export default function Home() {
       <main className="overflow-x-hidden">
         <HeroSection />
         
-        <div className="flex flex-col">
-          <FeaturesSection />
-          <BuilderSection />
-          <HowItWorks />
-          <PricingSection />
-          <FAQSection />
-          <CTASection />
+        <div className="flex flex-col gap-16 lg:gap-24">
+          <SectionWrapper><FeaturesSection /></SectionWrapper>
+          <SectionWrapper><BuilderSection /></SectionWrapper>
+          <SectionWrapper><HowItWorks /></SectionWrapper>
+          <SectionWrapper><PricingSection /></SectionWrapper>
+          <SectionWrapper><FAQSection /></SectionWrapper>
+          <SectionWrapper><CTASection /></SectionWrapper>
         </div>
       </main>
       <Footer />
