@@ -35,14 +35,9 @@ export default function HowItWorks() {
         
         {/* Section Header (Centered) */}
         <div className="max-w-4xl mx-auto text-center mb-24 px-4">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-7xl font-[1000] text-[#1A1C20] tracking-tight leading-[1.1] lg:leading-[1.05] mb-6 lg:mb-8"
-          >
+          <h2 className="text-3xl sm:text-4xl lg:text-7xl font-[1000] text-[#1A1C20] tracking-tight leading-[1.1] lg:leading-[1.05] mb-6 lg:mb-8">
             Bring your brand online <span className="text-indigo-600 italic border-b-4 border-indigo-100 lg:border-none">in 4 steps.</span>
-          </motion.h2>
+          </h2>
           <p className="text-xl lg:text-2xl text-gray-500 font-medium max-w-3xl mx-auto leading-relaxed">
              A seamless, step-by-step experience designed to get your business online with zero stress and maximum impact.
           </p>
