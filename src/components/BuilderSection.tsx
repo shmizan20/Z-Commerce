@@ -206,9 +206,9 @@ export default function BuilderSection() {
                  />
                ))}
 
-               {/* Definitive Clean Logo (Fix for internal icon background) */}
+               {/* Correct Central Icon (Balanced size) */}
                <div className="relative h-24 w-24 bg-[#2263C1] rounded-full flex items-center justify-center z-20 overflow-hidden border-0">
-                  <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-[100%] h-[100%] object-cover relative z-10 scale-[1.3]" />
+                  <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-[60%] h-[60%] object-contain relative z-10" />
                </div>
 
                {/* 4 elements around the center "Z" - NO PADDING FOR FINAL 48x40 ICONS */}
