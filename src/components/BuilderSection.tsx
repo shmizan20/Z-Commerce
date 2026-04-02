@@ -211,33 +211,33 @@ export default function BuilderSection() {
                   <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-[60%] h-[60%] object-contain relative z-10" />
                </div>
 
-               {/* 4 elements around the center "Z" - NO PADDING FOR FINAL 48x40 ICONS */}
-               {[
-                 { 
-                    // SSL Commerz
-                    content: <img src="/icons/sslcommerz.png" alt="SSL" className="w-full h-full object-contain" />, 
-                    x: -75, y: -75 
-                 },
-                 { 
-                    // SteadFast
-                    content: <img src="/icons/sTEADfast.png" alt="SteadFast" className="w-full h-full object-contain" />, 
-                    x: 75, y: -75 
-                 },
-                 { 
-                    // Pathao
-                    content: (
-                      <img src="/icons/Pathao.png" alt="Pathao" className="w-full h-full object-contain" />
-                    ), 
-                    x: -75, y: 75 
-                 },
-                 { 
-                    // eCourier
-                    content: (
-                       <img src="/icons/Ecourier.png" alt="eCourier" className="w-full h-full object-contain" />
-                    ), 
-                    x: 75, y: 75 
-                 }
-               ].map((item, i) => (
+                {/* 4 elements around the center "Z" - Visa, Master, bKash, Bangla QR */}
+                {[
+                  { 
+                     // bKash
+                     content: <img src="/icons/bkash.png" alt="bKash" className="w-[85%] h-[85%] object-contain" />, 
+                     x: -75, y: -75 
+                  },
+                  { 
+                     // Visa
+                     content: <img src="/icons/visa.png" alt="Visa" className="w-[85%] h-[85%] object-contain" />, 
+                     x: 75, y: -75 
+                  },
+                  { 
+                     // MasterCard
+                     content: (
+                       <img src="/icons/mastercard.png" alt="MasterCard" className="w-[85%] h-[85%] object-contain" />
+                     ), 
+                     x: -75, y: 75 
+                  },
+                  { 
+                     // Bangla QR
+                     content: (
+                        <img src="/icons/bangla-qr.png" alt="Bangla QR" className="w-[85%] h-[85%] object-contain" />
+                     ), 
+                     x: 75, y: 75 
+                  }
+                ].map((item, i) => (
                  <motion.div 
                     key={i}
                     animate={{ 
