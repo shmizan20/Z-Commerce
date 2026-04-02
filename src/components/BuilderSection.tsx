@@ -225,31 +225,26 @@ export default function BuilderSection() {
                {/* 4 elements around the center "Z" - NO PADDING FOR FINAL 48x40 ICONS */}
                {[
                  { 
-                    // Visa
-                    content: <div className="text-[8px] font-black italic text-[#1A1F71] tracking-tighter scale-125">VISA</div>, 
+                    // SSL Commerz
+                    content: <img src="/icons/sslcommerz.png" alt="SSL" className="w-full h-full object-contain" />, 
                     x: -75, y: -75 
                  },
                  { 
-                    // Mastercard
-                    content: (
-                      <div className="flex gap-[-5px] items-center relative scale-110">
-                        <div className="h-4 w-4 rounded-full bg-[#EB001B] relative z-10" />
-                        <div className="h-4 w-4 rounded-full bg-[#FF5F00] -ml-2.5 opacity-90" />
-                      </div>
-                    ), 
+                    // SteadFast
+                    content: <img src="/icons/sTEADfast.png" alt="SteadFast" className="w-full h-full object-contain" />, 
                     x: 75, y: -75 
                  },
                  { 
-                    // bKash (Final Resized Image)
+                    // Pathao
                     content: (
-                      <img src="/bkash.png" alt="bKash" className="w-full h-full object-cover" />
+                      <img src="/icons/Pathao.png" alt="Pathao" className="w-full h-full object-contain" />
                     ), 
                     x: -75, y: 75 
                  },
                  { 
-                    // Bangla QR (Final Resized Image)
+                    // eCourier
                     content: (
-                       <img src="/bangla-qr.png" alt="Bangla QR" className="w-full h-full object-cover" />
+                       <img src="/icons/Ecourier.png" alt="eCourier" className="w-full h-full object-contain" />
                     ), 
                     x: 75, y: 75 
                  }
@@ -266,7 +261,7 @@ export default function BuilderSection() {
                        delay: i * 0.7,
                        ease: "easeInOut"
                     }}
-                    className="absolute h-10 w-12 bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.06)] border border-slate-100 flex items-center justify-center overflow-hidden z-30"
+                    className="absolute h-10 w-12 bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.06)] border border-slate-100 flex items-center justify-center overflow-hidden z-30 p-1"
                  >
                     {item.content}
                  </motion.div>
