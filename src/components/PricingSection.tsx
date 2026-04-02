@@ -160,7 +160,7 @@ export default function PricingSection() {
                 <div className="mb-4 space-y-3">
                   <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-[11px] font-[1000] text-slate-800">SSLCOMMERZ Add-on</p>
+                      <p className="text-[12px] font-[1000] text-slate-800">SSLCOMMERZ Add-on</p>
                       <button 
                          onClick={() => toggleGateway(plan.name)}
                          className={`w-9 h-5 rounded-full transition-all ${hasGateway ? "bg-[#2263C1]" : "bg-slate-200"}`}
