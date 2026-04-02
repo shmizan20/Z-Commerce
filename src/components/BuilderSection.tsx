@@ -211,47 +211,29 @@ export default function BuilderSection() {
                   <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-[60%] h-[60%] object-contain relative z-10" />
                </div>
 
-                {/* 4 elements around the center "Z" - Genuine bKash, Visa, Master, Bangla QR */}
+                {/* 4 elements around the center "Z" - Using User Icons from public/ */}
                 {[
                   { 
-                     // bKash Genuine (Official Color & Proportion)
-                     content: (
-                       <svg viewBox="0 0 128 128" className="w-[85%] h-[85%]">
-                         <rect width="128" height="128" rx="24" fill="#D12053"/>
-                         <path d="M78 45H50v38h28V45zm-14 24H54v-6h10v6zm0-10H54v-6h10v6zm10 20H54v-6h20v6zm0-10H54v-6h20v6z" fill="#fff"/>
-                       </svg>
-                     ), 
+                     // bKash
+                     content: <img src="/bkash.png" alt="bKash" className="w-[85%] h-[85%] object-contain" />, 
                      x: -75, y: -75 
                   },
                   { 
-                     // Visa Genuine (Official Logo Path)
-                     content: (
-                       <svg viewBox="0 0 128 128" className="w-[85%] h-[85%]">
-                         <rect width="128" height="128" rx="24" fill="#fff"/>
-                         <path d="M48.8 77L52.8 52h8.5l-4 25h-8.5zm25.8-24.6c-1.8-.7-4.7-1.4-8.2-1.4-8.6 0-14.7 4.6-14.7 11.2 0 4.8 4.3 7.5 7.6 9.1 3.4 1.6 4.5 2.7 4.5 4.2 0 2.2-2.7 3.3-5.2 3.3-3.4 0-5.3-.5-8.2-1.8l-1.1-.5-1.2 7.4c2 1 5.7 1.8 9.5 1.8 9.2 0 15.2-4.5 15.2-11.5 0-3.8-2.3-6.8-7.3-9.1-3-.1-4.9-2.6-4.9-4.2 0-1.4 1.6-3 5-3 2.8 0 4.9.6 6.5 1.3l.8.3 1.3-7.6zM88.7 52h-6.6c-2 0-3.6 1.2-4.4 3L65.5 77h8.9l1.8-4.9h10.9l1.1 4.9h7.9L88.7 52zm-11 14l3.7-10.2 2.1 10.2h-5.8zM43 52h-8.5l-1 5.2c4.3 1.1 7.1 2.8 9.3 4.5L35.5 77h8.9L51.8 52H43z" fill="#1A1F71"/>
-                       </svg>
-                     ), 
+                     // Visa
+                     content: <img src="/Visa.png" alt="Visa" className="w-[85%] h-[85%] object-contain" />, 
                      x: 75, y: -75 
                   },
                   { 
-                     // MasterCard Genuine (Official Logo Path)
+                     // MasterCard
                      content: (
-                       <svg viewBox="0 0 128 128" className="w-[85%] h-[85%]">
-                         <rect width="128" height="128" rx="24" fill="#000"/>
-                         <circle cx="50" cy="64" r="28" fill="#EB001B"/>
-                         <circle cx="78" cy="64" r="28" fill="#F79E1B" fillOpacity="0.85"/>
-                       </svg>
+                       <img src="/Master.png" alt="MasterCard" className="w-[85%] h-[85%] object-contain" />
                      ), 
                      x: -75, y: 75 
                   },
                   { 
-                     // Bangla QR Genuine
+                     // Bangla QR
                      content: (
-                       <svg viewBox="0 0 128 128" className="w-[85%] h-[85%]">
-                         <rect width="128" height="128" rx="24" fill="#006A4E"/>
-                         <path d="M38 38h52v52H38zM44 44v40h40V44z" fill="#fff"/>
-                         <path d="M50 50h10v10H50zm18 0h10v10H68zm-18 18h10v10H50zm18 0h10v10H68z" fill="#fff"/>
-                       </svg>
+                        <img src="/bangla-qr.png" alt="Bangla QR" className="w-[85%] h-[85%] object-contain" />
                      ), 
                      x: 75, y: 75 
                   }
