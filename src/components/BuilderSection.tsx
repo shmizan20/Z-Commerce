@@ -206,13 +206,9 @@ export default function BuilderSection() {
                  />
                ))}
 
-               {/* Single Primary Circle + Icon Only (Zero shadows/blobs) */}
-               <div className="relative h-24 w-24 bg-[#2263C1] rounded-full flex items-center justify-center z-20">
-                  <motion.img 
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                    src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-[60%] h-[60%] object-contain relative z-10" 
-                  />
+               {/* Perfect Central Icon (Exact result: No extra circles/blobs) */}
+               <div className="relative h-24 w-24 bg-[#2263C1] rounded-full flex items-center justify-center z-10">
+                  <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-[60%] h-[60%] object-contain" />
                </div>
 
                {/* 4 elements around the center "Z" - NO PADDING FOR FINAL 48x40 ICONS */}
