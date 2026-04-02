@@ -206,19 +206,19 @@ export default function BuilderSection() {
                  />
                ))}
 
-               {/* Perfect Central Z-Commerz "Z" */}
-               <div className="relative h-24 w-24 bg-indigo-600 rounded-[2.2rem] flex items-center justify-center shadow-[0_10px_40px_rgba(79,70,229,0.2)] z-20 overflow-hidden">
+               {/* Perfect Central Logo (Replaced 'Z' with user icon) */}
+               <div className="relative h-24 w-24 bg-white rounded-[2.2rem] flex items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.06)] z-20 overflow-hidden p-5 border border-slate-50">
                   <motion.div 
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                    className="text-5xl font-black text-white relative z-10"
+                    className="w-full h-full relative z-10"
                   >
-                    Z
+                    <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-full h-full object-contain" />
                   </motion.div>
                   <motion.div 
-                    animate={{ opacity: [0.05, 0.2, 0.05] }}
+                    animate={{ opacity: [0.05, 0.1, 0.05] }}
                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-indigo-300 blur-2xl"
+                    className="absolute inset-0 bg-indigo-50 blur-2xl"
                   />
                </div>
 
