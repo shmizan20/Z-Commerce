@@ -19,7 +19,7 @@ export default function CTASection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-8"
+              className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-8"
             >
               Bring your brand online today.
             </motion.h2>
@@ -28,7 +28,7 @@ export default function CTASection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl text-blue-100 font-medium mb-12 leading-relaxed"
+              className="text-base md:text-xl text-blue-100 font-medium mb-12 leading-relaxed px-2"
             >
               Experience the simplest way to manage and grow your business.
             </motion.p>
@@ -40,7 +40,7 @@ export default function CTASection() {
             >
               <a 
                 href="#" 
-                className="inline-flex items-center gap-3 bg-white text-[#023E8A] px-10 py-5 rounded-full text-lg font-black hover:bg-white/90 active:scale-95 transition-all shadow-xl shadow-black/10 group"
+                className="inline-flex items-center gap-3 bg-white text-[#023E8A] px-7 lg:px-10 py-4 lg:py-5 rounded-full text-sm lg:text-lg font-black hover:bg-white/90 active:scale-95 transition-all shadow-xl shadow-black/10 group whitespace-nowrap"
               >
                 Start 3 days free trial
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
