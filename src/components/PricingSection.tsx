@@ -170,8 +170,16 @@ export default function PricingSection() {
                     </div>
                     <p className="text-[10px] font-bold text-slate-400 leading-none">Installation: ৳{plan.gateway.toLocaleString()} (1 yr)</p>
                     {hasGateway && (
-                      <div className="mt-2 pt-2 border-t border-dashed border-slate-200">
-                        <div className="flex justify-between text-[11px] font-extrabold text-[#2263C1]">
+                      <div className="mt-2 pt-2 border-t border-dashed border-slate-200 space-y-1">
+                        <div className="flex justify-between text-[10px] font-bold text-slate-500">
+                          <span>{yearly ? "Yearly" : "1st Month"} Sub:</span>
+                          <span>৳{currentBasePrice.toLocaleString()}</span>
+                        </div>
+                        <div className="flex justify-between text-[10px] font-bold text-slate-500">
+                          <span>Installation:</span>
+                          <span>৳{plan.gateway.toLocaleString()}</span>
+                        </div>
+                        <div className="flex justify-between text-[11px] font-extrabold text-[#2263C1] pt-1">
                           <span>TOTAL FIRST PAY:</span>
                           <span>৳{totalPrice.toLocaleString()}</span>
                         </div>
