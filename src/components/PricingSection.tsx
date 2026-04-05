@@ -202,15 +202,15 @@ export default function PricingSection() {
                          <div className={`w-3.5 h-3.5 rounded-full bg-white shadow-sm transition-transform ${hasGateway ? "translate-x-4.5" : "translate-x-0.75"}`} />
                       </button>
                     </div>
-                    <p className="text-[10px] font-bold text-slate-400 leading-none">Installation: ৳{plan.gateway.toLocaleString()} (1 yr)</p>
+                    <p className="text-[10px] font-bold text-slate-400 leading-none">Installation: ৳{plan.gateway.toLocaleString()} (Ontime for 1 year)</p>
                     {hasGateway && (
                       <div className="mt-2 pt-2 border-t border-dashed border-slate-200 space-y-1">
                         <div className="flex justify-between text-[10px] font-bold text-slate-500">
-                          <span>{yearly ? "Yearly" : "1st Month"} Sub:</span>
+                          <span>{yearly ? "Yearly subscription" : "1st month subscription"}</span>
                           <span>৳{currentBasePrice.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between text-[10px] font-bold text-slate-500">
-                          <span>Installation:</span>
+                          <span>Installation (Ontime for 1 year)</span>
                           <span>৳{plan.gateway.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between text-[11px] font-extrabold text-[#2263C1] pt-1">

@@ -11,16 +11,16 @@ export default function BuilderSection() {
 
   // Balanced 10 bars with Orange, Green, Blue, Teal colors
   const bars = [
-    { h: 45, color: "from-orange-500 to-orange-600" },
-    { h: 75, color: "from-emerald-500 to-emerald-600" },
-    { h: 55, color: "from-blue-500 to-blue-600" },
-    { h: 95, color: "from-teal-500 to-teal-600" },
-    { h: 65, color: "from-orange-400 to-orange-500" },
-    { h: 100, color: "from-emerald-400 to-emerald-500" },
-    { h: 110, color: "from-blue-400 to-blue-500" },
-    { h: 80, color: "from-teal-400 to-teal-500" },
-    { h: 85, color: "from-orange-500 to-orange-600" },
-    { h: 95, color: "from-emerald-500 to-emerald-600" },
+    { h: 50, color: "from-indigo-300 to-indigo-400" },
+    { h: 80, color: "from-violet-300 to-violet-400" },
+    { h: 65, color: "from-blue-300 to-blue-400" },
+    { h: 90, color: "from-indigo-400 to-indigo-500" },
+    { h: 75, color: "from-violet-400 to-violet-500" },
+    { h: 95, color: "from-blue-400 to-blue-500" },
+    { h: 85, color: "from-indigo-300 to-indigo-400" },
+    { h: 70, color: "from-violet-300 to-violet-400" },
+    { h: 80, color: "from-blue-300 to-blue-400" },
+    { h: 92, color: "from-indigo-400 to-indigo-500" },
   ];
 
   return (
@@ -105,7 +105,7 @@ export default function BuilderSection() {
                                 {item.emoji}
                              </div>
                              <div className="space-y-1 mt-1">
-                                <div className="h-1 w-full bg-slate-900 rounded-full" />
+                                <div className="h-1 w-full bg-slate-300 rounded-full" />
                                 <div className="h-1 w-1/2 bg-slate-200 rounded-full" />
                              </div>
                           </div>
@@ -131,8 +131,7 @@ export default function BuilderSection() {
             className="md:col-span-5 bg-white rounded-[3rem] border border-gray-100 p-10 shadow-[0_8px_40px_rgb(0,0,0,0.03)] flex flex-col hover:shadow-2xl transition-all duration-700 group overflow-hidden relative"
           >
             <div className="flex-1 flex flex-col justify-center relative">
-               <div className="flex justify-between items-center mb-8">
-                  <div className="h-3 w-24 bg-slate-900 rounded-full" />
+               <div className="flex justify-end items-center mb-8">
                   <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-100">
                      <motion.div 
                         animate={{ opacity: [1, 0.4, 1] }}
@@ -143,7 +142,7 @@ export default function BuilderSection() {
                   </div>
                </div>
                
-               <div className="relative h-40 flex items-end gap-3 px-2 group">
+               <div className="relative h-64 flex items-end gap-3 px-2 group">
                   {bars.map((bar, i) => (
                     <div key={i} className="flex-1 h-full flex items-end">
                        <motion.div 

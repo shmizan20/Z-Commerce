@@ -40,9 +40,9 @@ export default function StoreBuilderAnimation() {
         <div className="bg-white/80 backdrop-blur-xl rounded-2xl px-4 py-3.5 shadow-lg shadow-black/5 border border-white/60 z-30 flex items-center justify-center gap-1.5 sm:gap-3">
           {[
             { num: 1, label: "Info", labelFull: "Business Info", icon: "📝" },
-            { num: 2, label: "Apps", labelFull: "Integrations", icon: "🔗" },
-            { num: 3, label: "Style", labelFull: "Template", icon: "🎨" },
-            { num: 4, label: "Launch!", icon: "🚀" },
+            { num: 2, label: "Integrate", labelFull: "Integrations", icon: "🔗" },
+            { num: 3, label: "Templates", labelFull: "Template", icon: "🎨" },
+            { num: 4, label: "Launch", icon: "🚀" },
           ].map((s, i) => {
             const isActive = i === activeStep;
             const isCompleted = i < step;

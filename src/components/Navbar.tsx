@@ -22,7 +22,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 pt-5 md:pt-8 px-6 lg:px-8 flex justify-center pointer-events-none transition-all duration-500">
+    <nav className="fixed top-0 left-0 right-0 z-50 pt-4 md:pt-6 px-6 lg:px-8 flex justify-center pointer-events-none transition-all duration-500">
       <div 
         className={`max-w-7xl w-full bg-white/95 backdrop-blur-2xl rounded-full px-6 py-2 md:py-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-white/60 pointer-events-auto flex items-center justify-between transition-all duration-500 ${
           scrolled ? "scale-[0.98] shadow-[0_8px_30px_rgba(0,0,0,0.05)]" : "scale-100"

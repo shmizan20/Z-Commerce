@@ -25,7 +25,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen pt-32 lg:pt-64 pb-16 lg:pb-24 overflow-hidden bg-white">
+    <section className="relative min-h-screen pt-28 lg:pt-52 pb-16 lg:pb-24 overflow-hidden bg-white">
       {/* ── Stripe-style Colorful LIGHT Background ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
