@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 
 const plans = [
   {
@@ -167,6 +167,7 @@ export default function PricingSection() {
               <motion.div
                 key={plan.name}
                 variants={cardVariants}
+                layout
                 className={`relative rounded-2xl border-2 pt-6 pb-5 px-5 transition-all duration-500 bg-white flex flex-col h-full ${
                   plan.recommended
                     ? "border-[var(--primary)] lg:scale-[1.02] z-10"
@@ -179,22 +180,42 @@ export default function PricingSection() {
                   </div>
                 )}
 
-                {/* Header: Super Compact */}
-                <div className="text-center mb-3">
-                  <h3 className="text-[11px] font-black text-[#023E8A] uppercase tracking-[0.1em] mb-1">{plan.name}</h3>
+                {/* Header: Super Compact with Smooth Transitions */}
+                <motion.div layout className="text-center mb-3">
+                  <h3 className="text-[12px] font-black text-[#023E8A] uppercase tracking-[0.1em] mb-1">{plan.name}</h3>
                   <div className="flex items-baseline justify-center gap-1 mb-1">
-                    <span className="text-lg font-bold text-gray-900">৳</span>
-                    <span className="text-3xl font-[1000] text-gray-900">{currentBasePrice.toLocaleString()}</span>
-                    <span className="text-xs font-bold text-gray-400">/{yearly ? "yr" : "mo"}</span>
+                    <motion.span layout className="text-lg font-bold text-gray-900">৳</motion.span>
+                    <motion.span 
+                       layout
+                       className="text-3xl font-[1000] text-gray-900"
+                    >
+                       {currentBasePrice.toLocaleString()}
+                    </motion.span>
+                    <motion.span layout className="text-xs font-bold text-gray-400">/{yearly ? "yr" : "mo"}</motion.span>
                   </div>
-                  <p className="text-[11px] font-bold text-gray-400 leading-tight">{plan.description}</p>
-                </div>
+                  
+                  <AnimatePresence mode="wait">
+                    {yearly && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0, marginBottom: 0 }}
+                        animate={{ opacity: 1, height: "auto", marginBottom: 12 }}
+                        exit={{ opacity: 0, height: 0, marginBottom: 0 }}
+                        className="flex items-center justify-center gap-3 overflow-hidden"
+                      >
+                         <span className="text-[12px] font-bold text-gray-400 line-through decoration-slate-400">৳{plan.originalYearly.toLocaleString()}</span>
+                         <span className="text-[12px] font-black text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100 whitespace-nowrap">Save ৳{(plan.originalYearly - plan.yearly).toLocaleString()}</span>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                  
+                  <p className="text-[12px] font-bold text-gray-400 leading-tight">{plan.description}</p>
+                </motion.div>
 
                 {/* Gateway Box: Compact */}
-                <div className="mb-4 space-y-3">
+                <motion.div layout className="mb-4 space-y-3">
                   <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-[12px] font-[1000] text-slate-800">SSLCOMMERZ Add-on</p>
+                      <p className="text-[14px] font-[1000] text-slate-800">SSLCOMMERZ Add-on</p>
                       <button 
                          onClick={() => toggleGateway(plan.name)}
                          className={`w-9 h-5 rounded-full transition-all ${hasGateway ? "bg-[#2263C1]" : "bg-slate-200"}`}
@@ -202,23 +223,30 @@ export default function PricingSection() {
                          <div className={`w-3.5 h-3.5 rounded-full bg-white shadow-sm transition-transform ${hasGateway ? "translate-x-4.5" : "translate-x-0.75"}`} />
                       </button>
                     </div>
-                    <p className="text-[10px] font-bold text-slate-400 leading-none">Installation: ৳{plan.gateway.toLocaleString()} (Ontime for 1 year)</p>
-                    {hasGateway && (
-                      <div className="mt-2 pt-2 border-t border-dashed border-slate-200 space-y-1">
-                        <div className="flex justify-between text-[10px] font-bold text-slate-500">
-                          <span>{yearly ? "Yearly subscription" : "1st month subscription"}</span>
-                          <span>৳{currentBasePrice.toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between text-[10px] font-bold text-slate-500">
-                          <span>Installation (Ontime for 1 year)</span>
-                          <span>৳{plan.gateway.toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between text-[11px] font-extrabold text-[#2263C1] pt-1">
-                          <span>TOTAL FIRST PAY:</span>
-                          <span>৳{totalPrice.toLocaleString()}</span>
-                        </div>
-                      </div>
-                    )}
+                    <p className="text-[12px] font-bold text-slate-400 leading-none">Installation: ৳{plan.gateway.toLocaleString()} (Ontime for 1 year)</p>
+                    <AnimatePresence>
+                      {hasGateway && (
+                        <motion.div 
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="mt-2 pt-2 border-t border-dashed border-slate-200 space-y-1 overflow-hidden"
+                        >
+                          <div className="flex justify-between text-[12px] font-bold text-slate-500">
+                            <span>{yearly ? "Yearly subscription" : "1st month subscription"}</span>
+                            <span>৳{currentBasePrice.toLocaleString()}</span>
+                          </div>
+                          <div className="flex justify-between text-[12px] font-bold text-slate-500">
+                            <span>Installation (Ontime for 1 year)</span>
+                            <span>৳{plan.gateway.toLocaleString()}</span>
+                          </div>
+                          <div className="flex justify-between text-[13px] font-extrabold text-[#2263C1] pt-1">
+                            <span>TOTAL FIRST PAY:</span>
+                            <span>৳{totalPrice.toLocaleString()}</span>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
 
                   <a href="#" className={`block w-full text-center py-3 rounded-lg text-[13px] font-[1000] border-2 transition-all ${
@@ -226,7 +254,7 @@ export default function PricingSection() {
                   }`}>
                     {plan.cta}
                   </a>
-                </div>
+                </motion.div>
 
                 {/* Features: Compact list */}
                 <div className="space-y-3.5 mb-2 flex-grow border-t border-slate-50 pt-4">
@@ -235,7 +263,7 @@ export default function PricingSection() {
                        <svg className={`w-4 h-4 shrink-0 mt-0.5 ${f.included ? "text-emerald-500" : "text-gray-300"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d={f.included ? "M5 13l4 4L19 7" : "M6 18L18 6M6 6l12 12"} />
                        </svg>
-                       <span className={`text-[13px] font-medium leading-tight ${f.included ? "text-slate-600" : "text-slate-300"}`}>
+                       <span className={`text-[12px] font-medium leading-tight ${f.included ? "text-slate-600" : "text-slate-300"}`}>
                          {f.text}
                        </span>
                     </div>
