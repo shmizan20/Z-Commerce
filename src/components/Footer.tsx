@@ -109,7 +109,7 @@ export default function Footer() {
 
         <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/40 text-[13px] font-medium">
-            © {currentYear} Z-COMMERZ. All rights reserved. Built with ❤️ in Bangladesh.
+            © {currentYear} Z-COMMERZ. All rights reserved.
           </p>
           <div className="flex items-center gap-8">
             <a href="#" className="text-white/40 hover:text-white text-[13px] font-medium transition-colors">Term of use</a>
