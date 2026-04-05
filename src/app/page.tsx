@@ -22,13 +22,18 @@ function SectionWrapper({ children }: { children: React.ReactNode }) {
 
   // Balanced symmetric reveal for both up and down scrolling
   const opacity = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [0.92, 1, 1, 0.92]);
-  const y = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [40, 0, 0, -40]);
+  const scale = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [0.94, 1, 1, 0.94]);
+  const y = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [30, 0, 0, -30]);
 
   return (
     <motion.div
       ref={ref}
-      style={{ opacity, scale, y }}
+      style={{ 
+        opacity, 
+        scale, 
+        y,
+        willChange: "transform, opacity"
+      }}
       className="w-full flex flex-col"
     >
       {children}
@@ -45,12 +50,14 @@ export default function Home() {
   });
 
   useEffect(() => {
+    // Smoother and faster scroll duration
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0, 
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
+      wheelMultiplier: 1.1, // Slightly better response
     });
 
     function raf(time: number) {

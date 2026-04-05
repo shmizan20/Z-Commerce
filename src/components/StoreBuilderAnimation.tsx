@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 /**
  * Premium 4-step store creation animation.
@@ -20,8 +21,8 @@ export default function StoreBuilderAnimation() {
   }, []);
 
   useEffect(() => {
-    // durations in ms: [Business Info, Integrations, Template, Launch! (Modal), Final Pause]
-    const durations = [4000, 4000, 4500, 3000, 1000];
+    // Optimized durations for a snappier feel: [Business Info, Integrations, Template, Launch! (Modal), Final Pause]
+    const durations = [2800, 2600, 3000, 2500, 800];
     const timer = setTimeout(nextStep, durations[step]);
     return () => clearTimeout(timer);
   }, [step, nextStep]);
@@ -172,9 +173,9 @@ export default function StoreBuilderAnimation() {
               <IntegrationCard
                 name="SSLCOMMERZ"
                 description="Secure payment gateway for Bangladesh"
-                icon={<img src="/icons/sslcommerz.png" alt="SSLCOMMERZ" className="w-full h-full object-contain" />}
+                icon={<Image src="/icons/sslcommerz.png" alt="SSLCOMMERZ" width={48} height={48} className="w-full h-full object-contain" priority />}
                 features={["bKash", "Nagad", "Cards", "Banking"]}
-                delay={300}
+                delay={200}
                 active={step === 1}
               />
 
@@ -183,25 +184,25 @@ export default function StoreBuilderAnimation() {
                 <IntegrationCard 
                   name="SteadFast" 
                   description="Reliable nationwide courier service" 
-                  icon={<img src="/icons/sTEADfast.png" alt="SteadFast" className="w-full h-full object-contain" />} 
+                  icon={<Image src="/icons/sTEADfast.png" alt="SteadFast" width={48} height={48} className="w-full h-full object-contain" />} 
                   features={["Nationwide", "COD", "Express"]} 
-                  delay={700} 
+                  delay={500} 
                   active={step === 1} 
                 />
                 <IntegrationCard 
                   name="Pathao" 
                   description="Same-day delivery in Dhaka" 
-                  icon={<img src="/icons/Pathao.png" alt="Pathao" className="w-full h-full object-contain" />} 
+                  icon={<Image src="/icons/Pathao.png" alt="Pathao" width={48} height={48} className="w-full h-full object-contain" />} 
                   features={["Same Day", "Express"]} 
-                  delay={1200} 
+                  delay={900} 
                   active={step === 1} 
                 />
                 <IntegrationCard 
                   name="eCourier" 
                   description="Nationwide parcel delivery" 
-                  icon={<img src="/icons/Ecourier.png" alt="eCourier" className="w-full h-full object-contain" />} 
+                  icon={<Image src="/icons/Ecourier.png" alt="eCourier" width={48} height={48} className="w-full h-full object-contain" />} 
                   features={["Standard", "COD"]} 
-                  delay={1700} 
+                  delay={1300} 
                   active={step === 1} 
                 />
               </div>
@@ -360,16 +361,16 @@ export default function StoreBuilderAnimation() {
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] text-[var(--muted)]">Payment</span>
                   <div className="h-4 w-12 flex items-center justify-center opacity-80">
-                    <img src="/icons/sslcommerz.png" alt="SSL" className="h-full w-full object-contain" />
+                    <Image src="/icons/sslcommerz.png" alt="SSL" width={48} height={16} className="h-full w-full object-contain" />
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-[10px] text-[var(--muted)]">Delivery</span>
-                  <div className="h-4 w-10 overflow-hidden opacity-80">
-                    <img src="/icons/sTEADfast.png" alt="SteadFast" className="h-full w-full object-contain" />
+                  <div className="h-4 w-10 overflow-hidden opacity-80 shadow-sm rounded">
+                    <Image src="/icons/sTEADfast.png" alt="SteadFast" width={40} height={16} className="h-full w-full object-contain bg-white" />
                   </div>
-                  <div className="h-4 w-10 overflow-hidden opacity-80">
-                    <img src="/icons/Pathao.png" alt="Pathao" className="h-full w-full object-contain" />
+                  <div className="h-4 w-10 overflow-hidden opacity-80 shadow-sm rounded">
+                    <Image src="/icons/Pathao.png" alt="Pathao" width={40} height={16} className="h-full w-full object-contain bg-white" />
                   </div>
                 </div>
               </div>
@@ -477,7 +478,7 @@ function CenterExplosionConfetti() {
         const color = colors[i % colors.length];
         const shapeType = i % 4; // 0=square, 1=circle, 2=line, 3=triangle
         const distance = 140 + Math.random() * 120;
-        const duration = 2.2 + Math.random() * 1.3;
+        const duration = 2.0 + Math.random() * 1.0;
         
         return (
           <motion.div
@@ -492,7 +493,7 @@ function CenterExplosionConfetti() {
             }}
             transition={{
               duration: duration,
-              delay: 0.3 + (Math.random() * 0.15),
+              delay: 0.1 + (Math.random() * 0.1),
               ease: [0.1, 0.8, 0.2, 1],
             }}
             className="absolute"
@@ -504,6 +505,7 @@ function CenterExplosionConfetti() {
               borderBottom: shapeType === 3 ? `8px solid ${color}` : "none",
               borderLeft: shapeType === 3 ? "5px solid transparent" : "none",
               borderRight: shapeType === 3 ? "5px solid transparent" : "none",
+              willChange: "transform, opacity"
             }}
           />
         );

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const steps = [
   {
@@ -203,8 +204,8 @@ function Step2_Integrations() {
                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest px-1">Payment Gateway</label>
                <div className="p-4 border border-slate-100 bg-white rounded-[2rem] flex items-center justify-between shadow-sm">
                   <div className="flex gap-5 items-start">
-                     <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg ring-4 ring-indigo-50 overflow-hidden">
-                        <img src="/icons/sslcommerz.png" alt="SSL" className="w-full h-full object-contain" />
+                     <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg ring-4 ring-indigo-50 overflow-hidden relative">
+                        <Image src="/icons/sslcommerz.png" alt="SSL" fill className="object-contain p-2" />
                      </div>
                      <div className="space-y-1.5">
                         <p className="text-[17px] font-black text-slate-900 leading-none">SSLCOMMERZ</p>
@@ -233,8 +234,8 @@ function Step2_Integrations() {
                   ].map((item, i) => (
                     <div key={item.name} className="p-4 border border-slate-100 bg-white rounded-[2rem] flex items-center justify-between shadow-sm">
                        <div className="flex gap-5 items-start">
-                          <div className={`h-14 w-14 ${item.color} rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg ring-4 ring-slate-50 overflow-hidden`}>
-                             <img src={item.icon} alt={item.name} className="w-full h-full object-contain" />
+                          <div className={`h-14 w-14 ${item.color} rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg ring-4 ring-slate-50 overflow-hidden relative`}>
+                             <Image src={item.icon} alt={item.name} fill className="object-contain p-2" />
                           </div>
                           <div className="space-y-1.5">
                              <p className="text-[17px] font-black text-slate-900 leading-none">{item.name}</p>
@@ -371,18 +372,18 @@ function Step4_LaunchAchievement() {
             <div className="bg-slate-50/50 border-t border-slate-100 px-6 py-2.5 flex items-center justify-between">
                <div className="flex items-center gap-3">
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">Payment</span>
-                  <div className="h-4 w-10 overflow-hidden opacity-80">
-                    <img src="/icons/sslcommerz.png" alt="SSL" className="h-full w-full object-contain" />
+                  <div className="h-4 w-10 overflow-hidden opacity-80 relative">
+                    <Image src="/icons/sslcommerz.png" alt="SSL" fill className="object-contain" />
                   </div>
                </div>
                <div className="flex items-center gap-4">
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">Delivery</span>
                   <div className="flex gap-2.5">
-                    <div className="h-4 w-8 overflow-hidden opacity-80">
-                      <img src="/icons/sTEADfast.png" alt="SteadFast" className="h-full w-full object-contain" />
+                    <div className="h-4 w-8 overflow-hidden opacity-80 relative">
+                      <Image src="/icons/sTEADfast.png" alt="SteadFast" fill className="object-contain" />
                     </div>
-                    <div className="h-4 w-8 overflow-hidden opacity-80">
-                      <img src="/icons/Pathao.png" alt="Pathao" className="h-full w-full object-contain" />
+                    <div className="h-4 w-8 overflow-hidden opacity-80 relative">
+                      <Image src="/icons/Pathao.png" alt="Pathao" fill className="object-contain" />
                     </div>
                   </div>
                </div>

@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useInView } from "../hooks/useInView";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function BuilderSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -150,6 +151,7 @@ export default function BuilderSection() {
                           initial={{ height: 0 }}
                           whileInView={{ height: `${bar.h}%` }}
                           viewport={{ once: true }}
+                          style={{ willChange: "height" }}
                           animate={{ 
                             height: [ `${bar.h}%`, `${Math.min(bar.h + (i%2?10:-10), 110)}%`, `${bar.h}%` ],
                           }}
@@ -162,6 +164,7 @@ export default function BuilderSection() {
                        >
                           <motion.div 
                             animate={{ y: ["0%", "200%"] }}
+                            style={{ willChange: "transform" }}
                             transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
                             className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent"
                           />
@@ -208,32 +211,32 @@ export default function BuilderSection() {
 
                {/* Correct Central Icon (Balanced size) */}
                <div className="relative h-24 w-24 bg-[#2263C1] rounded-full flex items-center justify-center z-20 overflow-hidden border-0">
-                  <img src="/icons/sslcommerz.png" alt="Z-Commerz" className="w-[60%] h-[60%] object-contain relative z-10" />
+                  <Image src="/icons/sslcommerz.png" alt="Z-Commerz" width={60} height={60} className="w-[60%] h-[60%] object-contain relative z-10" />
                </div>
 
                 {/* 4 elements around the center "Z" - Using User Icons from public/ */}
                 {[
                   { 
                      // bKash
-                     content: <img src="/bkash.png" alt="bKash" className="w-[85%] h-[85%] object-contain" />, 
+                     content: <Image src="/bkash.png" alt="bKash" width={40} height={40} className="w-[85%] h-[85%] object-contain" />, 
                      x: -75, y: -75 
                   },
                   { 
                      // Visa
-                     content: <img src="/Visa.png" alt="Visa" className="w-[85%] h-[85%] object-contain" />, 
+                     content: <Image src="/Visa.png" alt="Visa" width={40} height={40} className="w-[85%] h-[85%] object-contain" />, 
                      x: 75, y: -75 
                   },
                   { 
                      // MasterCard
                      content: (
-                       <img src="/Master.png" alt="MasterCard" className="w-[85%] h-[85%] object-contain" />
+                       <Image src="/Master.png" alt="MasterCard" width={40} height={40} className="w-[85%] h-[85%] object-contain" />
                      ), 
                      x: -75, y: 75 
                   },
                   { 
                      // Bangla QR
                      content: (
-                        <img src="/bangla-qr.png" alt="Bangla QR" className="w-[85%] h-[85%] object-contain" />
+                        <Image src="/bangla-qr.png" alt="Bangla QR" width={40} height={40} className="w-[85%] h-[85%] object-contain" />
                      ), 
                      x: 75, y: 75 
                   }
