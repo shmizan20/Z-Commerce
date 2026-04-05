@@ -99,7 +99,7 @@ export default function PricingSection() {
       opacity: 1, 
       y: 0, 
       scale: 1,
-      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } 
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
     }
   };
 
@@ -168,7 +168,7 @@ export default function PricingSection() {
                 key={plan.name}
                 variants={cardVariants}
                 layout
-                className={`relative rounded-2xl border-2 pt-6 pb-5 px-5 transition-all duration-500 bg-white flex flex-col h-full ${
+                className={`relative rounded-2xl border-2 pt-6 pb-5 px-5 transition-all duration-500 bg-white flex flex-col h-full transform-gpu ${
                   plan.recommended
                     ? "border-[var(--primary)] lg:scale-[1.02] z-10"
                     : "border-gray-100"

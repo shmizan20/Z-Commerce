@@ -40,7 +40,7 @@ export default function FAQSection() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
             className="text-4xl lg:text-[42px] font-black tracking-tight"
           >
             Frequently asked questions

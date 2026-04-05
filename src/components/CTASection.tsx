@@ -18,7 +18,7 @@ export default function CTASection() {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-8"
             >
               Bring your brand online today.
@@ -26,7 +26,7 @@ export default function CTASection() {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: 0.1 }}
               className="text-base md:text-xl text-blue-100 font-medium mb-12 leading-relaxed px-2"
             >
@@ -35,7 +35,7 @@ export default function CTASection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: 0.2 }}
             >
               <a 

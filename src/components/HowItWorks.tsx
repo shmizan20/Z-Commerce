@@ -36,19 +36,37 @@ export default function HowItWorks() {
         
         {/* Section Header (Centered) */}
         <div className="max-w-4xl mx-auto text-center mb-24 px-4">
-          <h2 className="text-3xl sm:text-4xl lg:text-7xl font-[1000] text-[#1A1C20] tracking-tight leading-[1.1] lg:leading-[1.05] mb-6 lg:mb-8">
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-3xl sm:text-4xl lg:text-7xl font-[1000] text-[#1A1C20] tracking-tight leading-[1.1] lg:leading-[1.05] mb-6 lg:mb-8"
+          >
             Bring your brand online <span className="text-indigo-600 italic border-b-4 border-indigo-100 lg:border-none">in 4 steps.</span>
-          </h2>
-          <p className="text-xl lg:text-2xl text-gray-500 font-medium max-w-3xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-xl lg:text-2xl text-gray-500 font-medium max-w-3xl mx-auto leading-relaxed"
+          >
              A seamless, step-by-step experience designed to get your business online with zero stress and maximum impact.
-          </p>
+          </motion.p>
         </div>
 
         {/* High-Fidelity Interactive Preview Container */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           
           {/* LEFT: Dynamic Content Box (True Responsive Height based on internal content) */}
-          <div className="lg:col-span-7 sticky top-32 order-2 lg:order-1 self-start">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 sticky top-32 order-2 lg:order-1 self-start"
+          >
              <motion.div 
                layout
                className="relative w-full bg-white rounded-[3.5rem] border border-slate-100 shadow-[0_40px_100px_rgba(0,0,0,0.04)] overflow-hidden p-10 lg:p-14 py-12 lg:py-16"
@@ -69,13 +87,29 @@ export default function HowItWorks() {
                    </motion.div>
                 </AnimatePresence>
              </motion.div>
-          </div>
+          </motion.div>
 
           {/* RIGHT: Compact Step Selection Panel */}
-          <div className="lg:col-span-5 order-1 lg:order-2 space-y-4">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.1 }
+              }
+            }}
+            className="lg:col-span-5 order-1 lg:order-2 space-y-4"
+          >
             {steps.map((step, index) => (
-              <button
+              <motion.button
                 key={step.num}
+                variants={{
+                  hidden: { opacity: 0, x: 30 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+                }}
                 onClick={() => setActiveStep(index)}
                 className={`w-full text-left px-5 lg:px-7 py-5 lg:py-7 rounded-[1.8rem] lg:rounded-[2.2rem] transition-all duration-400 border-2 relative overflow-hidden group ${
                   activeStep === index 
@@ -102,9 +136,9 @@ export default function HowItWorks() {
                     </p>
                   </div>
                 </div>
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
 
         </div>
 

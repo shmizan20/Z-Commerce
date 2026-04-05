@@ -20,7 +20,7 @@ export default function HeroSection() {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     }
   };
 
@@ -46,7 +46,8 @@ export default function HeroSection() {
       <motion.div 
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }}
         className="relative max-w-7xl mx-auto px-6 lg:px-8"
       >
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-start">
@@ -97,8 +98,9 @@ export default function HeroSection() {
           {/* Right - Animation section */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="relative lg:pl-10 lg:block mt-8 lg:mt-0"
           >
             <div className="absolute inset-[-100px] bg-indigo-500/10 blur-[130px] rounded-full pointer-events-none" />

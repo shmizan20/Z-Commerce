@@ -31,7 +31,7 @@ export default function BuilderSection() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl lg:text-7xl font-[900] text-[#1A1C20] tracking-tight mb-4 lg:mb-6"
           >
@@ -40,7 +40,7 @@ export default function BuilderSection() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xl text-gray-500 font-medium leading-relaxed"
           >
@@ -55,7 +55,7 @@ export default function BuilderSection() {
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="md:col-span-7 bg-white rounded-[3rem] border border-gray-100 p-8 shadow-[0_8px_40px_rgb(0,0,0,0.03)] flex flex-col hover:shadow-2xl transition-all duration-700 group overflow-hidden"
           >
@@ -126,7 +126,7 @@ export default function BuilderSection() {
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="md:col-span-5 bg-white rounded-[3rem] border border-gray-100 p-10 shadow-[0_8px_40px_rgb(0,0,0,0.03)] flex flex-col hover:shadow-2xl transition-all duration-700 group overflow-hidden relative"
           >
@@ -149,7 +149,7 @@ export default function BuilderSection() {
                           className={`w-full bg-gradient-to-t ${bar.color} rounded-t-full relative overflow-hidden shadow-lg shadow-black/5`}
                           initial={{ height: 0 }}
                           whileInView={{ height: `${bar.h}%` }}
-                          viewport={{ once: true }}
+             viewport={{ once: false, amount: 0.2 }}
                           style={{ willChange: "height" }}
                           animate={{ 
                             height: [ `${bar.h}%`, `${Math.min(bar.h + (i%2?10:-10), 110)}%`, `${bar.h}%` ],
@@ -184,7 +184,7 @@ export default function BuilderSection() {
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="md:col-span-5 bg-white rounded-[3rem] border border-gray-100 p-10 shadow-[0_8px_40px_rgb(0,0,0,0.03)] flex flex-col hover:shadow-2xl transition-all duration-700 group overflow-hidden relative"
           >
@@ -270,7 +270,7 @@ export default function BuilderSection() {
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="md:col-span-7 bg-white rounded-[3rem] border border-gray-100 p-10 shadow-[0_8px_40px_rgb(0,0,0,0.03)] flex flex-col hover:shadow-2xl transition-all duration-700 group overflow-hidden"
           >
