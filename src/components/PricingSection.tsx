@@ -216,7 +216,7 @@ export default function PricingSection() {
                 <motion.div layout className="mb-4 space-y-3">
                   <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-[14px] font-[1000] text-slate-800">SSLCOMMERZ Add-on</p>
+                      <p className="text-[12px] font-[1000] text-slate-800 uppercase tracking-tight">SSLCOMMERZ Add-on</p>
                       <button 
                          onClick={() => toggleGateway(plan.name)}
                          className={`w-9 h-5 rounded-full transition-all ${hasGateway ? "bg-[#2263C1]" : "bg-slate-200"}`}
@@ -224,7 +224,7 @@ export default function PricingSection() {
                          <div className={`w-3.5 h-3.5 rounded-full bg-white shadow-sm transition-transform ${hasGateway ? "translate-x-4.5" : "translate-x-0.75"}`} />
                       </button>
                     </div>
-                    <p className="text-[12px] font-bold text-slate-400 leading-none">Installation: ৳{plan.gateway.toLocaleString()} (Ontime for 1 year)</p>
+                    <p className="text-[12px] font-bold text-slate-400 leading-none">Installation: ৳{plan.gateway.toLocaleString()} (One-time setup)</p>
                     <AnimatePresence>
                       {hasGateway && (
                         <motion.div 
@@ -238,10 +238,10 @@ export default function PricingSection() {
                             <span>৳{currentBasePrice.toLocaleString()}</span>
                           </div>
                           <div className="flex justify-between text-[12px] font-bold text-slate-500">
-                            <span>Installation (Ontime for 1 year)</span>
+                            <span>Installation (Setup fee)</span>
                             <span>৳{plan.gateway.toLocaleString()}</span>
                           </div>
-                          <div className="flex justify-between text-[13px] font-extrabold text-[#2263C1] pt-1">
+                          <div className="flex justify-between text-[12px] font-extrabold text-[#2263C1] pt-1">
                             <span>TOTAL FIRST PAY:</span>
                             <span>৳{totalPrice.toLocaleString()}</span>
                           </div>
