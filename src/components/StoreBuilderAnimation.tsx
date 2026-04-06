@@ -288,11 +288,11 @@ export default function StoreBuilderAnimation() {
                         <span className="text-sm sm:text-base">{s.icon}</span>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="flex flex-col mb-0.5">
-                          <span className="text-[7px] sm:text-[8px] font-bold text-gray-400 tracking-tight leading-none mb-1">{s.label}</span>
-                          <span className="w-fit text-[6px] sm:text-[7px] font-black text-green-500 bg-green-50 px-1 py-0.5 rounded whitespace-nowrap">{s.add}</span>
+                        <p className="text-[7px] sm:text-[8px] font-bold text-gray-400 tracking-tight uppercase mb-0.5">{s.label}</p>
+                        <div className="flex items-center gap-1.5">
+                          <p className="text-sm sm:text-base font-black text-[#1A1C20] tracking-tight">{s.val}</p>
+                          <span className="text-[6px] sm:text-[7px] font-black text-green-500 bg-green-50 px-1 py-0.5 rounded whitespace-nowrap">{s.add}</span>
                         </div>
-                        <p className="text-sm sm:text-base font-black text-[#1A1C20] tracking-tight">{s.val}</p>
                       </div>
                    </div>
                 ))}
