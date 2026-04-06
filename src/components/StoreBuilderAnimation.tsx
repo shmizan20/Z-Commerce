@@ -30,7 +30,7 @@ export default function StoreBuilderAnimation() {
   const activeStep = Math.min(step, 3);
 
   return (
-    <div className="relative w-full min-h-[440px] sm:min-h-[620px] lg:min-h-[780px] flex items-start justify-center">
+    <div className="relative w-full min-h-[340px] sm:min-h-[580px] lg:min-h-[620px] flex items-start justify-center">
       {/* Ambient glows */}
       <div className="absolute w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-[var(--primary)]/[0.07] via-[var(--accent)]/[0.05] to-purple-500/[0.06] rounded-full blur-[120px] animate-pulse-glow" />
 
@@ -299,7 +299,7 @@ export default function StoreBuilderAnimation() {
               </div>
 
               {/* Store Content - MOBILE SCALED */}
-              <div className="px-4 sm:px-6 mt-4 pb-4">
+              <div className="px-4 sm:px-6 mt-4 pb-1">
                 <div className="h-[2px] bg-gray-100 w-full rounded-full mb-4 overflow-hidden">
                   <motion.div initial={{ x: "-100%" }} animate={{ x: "0%" }} transition={{ duration: 1.5, delay: 0.5 }} className="w-1/3 h-full bg-indigo-500" />
                 </div>
