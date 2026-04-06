@@ -84,7 +84,7 @@ export default function Home() {
       <main className="overflow-x-hidden">
         <HeroSection />
         
-        <div className="flex flex-col gap-16 lg:gap-24">
+        <div className="flex flex-col">
           <SectionWrapper><FeaturesSection /></SectionWrapper>
           <SectionWrapper><BuilderSection /></SectionWrapper>
           <SectionWrapper><HowItWorks /></SectionWrapper>

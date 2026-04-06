@@ -30,7 +30,7 @@ export default function StoreBuilderAnimation() {
   const activeStep = Math.min(step, 3);
 
   return (
-    <div className="relative w-full min-h-[720px] lg:min-h-[780px] flex items-start justify-center">
+    <div className="relative w-full min-h-[620px] lg:min-h-[780px] flex items-start justify-center">
       {/* Ambient glows */}
       <div className="absolute w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-[var(--primary)]/[0.07] via-[var(--accent)]/[0.05] to-purple-500/[0.06] rounded-full blur-[120px] animate-pulse-glow" />
 
@@ -88,7 +88,7 @@ export default function StoreBuilderAnimation() {
         </div>
 
         {/* Card container - flush with stepper */}
-        <div className="relative min-h-[580px]">
+        <div className="relative min-h-[520px] lg:min-h-[580px]">
 
           {/* ═══════ STEP 1: BUSINESS INFO ═══════ */}
           <div
@@ -96,7 +96,7 @@ export default function StoreBuilderAnimation() {
               step === 0 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8 pointer-events-none"
             }`}
           >
-            <div className="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-black/8 border border-white/60 p-8">
+            <div className="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-black/8 border border-white/60 p-6 lg:p-8">
               <h3 className="text-lg font-bold text-[var(--foreground)] mb-1">Tell us about your business</h3>
               <p className="text-sm text-[var(--muted)] mb-6">This helps us set up your store perfectly.</p>
 
@@ -165,7 +165,7 @@ export default function StoreBuilderAnimation() {
               step === 1 ? "opacity-100 translate-x-0" : step < 1 ? "opacity-0 translate-x-8 pointer-events-none" : "opacity-0 -translate-x-8 pointer-events-none"
             }`}
           >
-            <div className="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-black/8 border border-white/60 p-8">
+            <div className="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-black/8 border border-white/60 p-6 lg:p-8">
               <h3 className="text-lg font-bold text-[var(--foreground)] mb-1">Connect payment & delivery</h3>
               <p className="text-sm text-[var(--muted)] mb-6">One-click setup. Start accepting orders instantly.</p>
 
@@ -215,7 +215,7 @@ export default function StoreBuilderAnimation() {
               step === 2 ? "opacity-100 translate-x-0" : step < 2 ? "opacity-0 translate-x-8 pointer-events-none" : "opacity-0 -translate-x-8 pointer-events-none"
             }`}
           >
-            <div className="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-black/8 border border-white/60 p-8">
+            <div className="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-black/8 border border-white/60 p-6 lg:p-8">
               <h3 className="text-lg font-bold text-[var(--foreground)] mb-1">Choose your store design</h3>
               <p className="text-sm text-[var(--muted)] mb-6">Pick a template that matches your brand. Customize anytime.</p>
 

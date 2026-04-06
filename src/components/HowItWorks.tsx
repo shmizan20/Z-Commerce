@@ -31,11 +31,11 @@ export default function HowItWorks() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section id="how-it-works" className="py-24 lg:py-40 bg-[#F8FAFC] overflow-hidden scroll-mt-24">
+    <section id="how-it-works" className="py-10 lg:py-24 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Section Header (Centered) */}
-        <div className="max-w-4xl mx-auto text-center mb-24 px-4">
+        <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-24 px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -143,7 +143,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Global CTA */}
-        <div className="mt-24 lg:mt-32 text-center">
+        <div className="mt-12 lg:mt-32 text-center">
             <a
                href="#"
                className="inline-flex items-center gap-3 px-10 py-5 text-lg font-black text-white bg-[#2263C1] rounded-2xl hover:bg-[#1C54A8] transition-all shadow-xl shadow-[#2263C1]/20 hover:-translate-y-1"

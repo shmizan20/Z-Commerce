@@ -25,22 +25,29 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen pt-28 lg:pt-52 pb-16 lg:pb-24 overflow-hidden bg-white">
+    <section className="relative pt-20 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-white">
       {/* ── Stripe-style Colorful LIGHT Background ── */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div 
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+        style={{
+          maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
+        }}
+      >
         <div 
-          className="absolute top-[-25%] left-[-10%] w-[120%] h-[90%] bg-white -skew-y-12 z-0"
+          className="absolute inset-0 bg-white z-0"
           style={{
             background: `
-              radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.25) 0px, transparent 55%),
-              radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.22) 0px, transparent 55%),
-              radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.2) 0px, transparent 55%),
-              radial-gradient(at 0% 100%, rgba(236, 72, 153, 0.18) 0px, transparent 55%)
-            `
+              radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.22) 0px, transparent 55%),
+              radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.18) 0px, transparent 55%),
+              radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 55%),
+              radial-gradient(at 0% 100%, rgba(236, 72, 153, 0.12) 0px, transparent 55%)
+            `,
+            clipPath: 'polygon(0 0, 100% 0, 100% 30%, 0 100%)'
           }}
         />
-        <div className="absolute top-[15%] right-[-10%] w-[700px] h-[700px] bg-gradient-to-br from-indigo-500/18 via-purple-500/12 to-transparent rounded-full blur-[140px] animate-pulse-slow ml-auto" />
-        <div className="absolute bottom-[25%] left-[-5%] w-[600px] h-[600px] bg-gradient-to-tr from-cyan-400/18 via-blue-400/12 to-transparent rounded-full blur-[120px] animate-pulse-slow" />
+        <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-gradient-to-br from-indigo-500/12 via-purple-500/8 to-transparent rounded-full blur-[100px] animate-pulse-slow ml-auto" />
+        <div className="absolute top-[35%] left-[-5%] w-[400px] h-[400px] bg-gradient-to-tr from-cyan-400/12 via-blue-400/8 to-transparent rounded-full blur-[90px] animate-pulse-slow" />
       </div>
 
       <motion.div 
@@ -50,11 +57,11 @@ export default function HeroSection() {
         viewport={{ once: false, amount: 0.1 }}
         className="relative max-w-7xl mx-auto px-6 lg:px-8"
       >
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-start">
           
-          <div className="max-w-xl pt-10">
+          <div className="max-w-xl pt-4 lg:pt-10">
             {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-full px-4 py-1.5 mb-10 shadow-sm">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-full px-4 py-1.5 mb-6 lg:mb-10 shadow-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
               <span className="text-[10px] font-black text-[#023E8A] uppercase tracking-[0.2em]">
                 Powered by SSLWireless
@@ -70,12 +77,12 @@ export default function HeroSection() {
               website in minutes.
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-lg lg:text-xl text-gray-500 leading-relaxed mb-12 max-w-2xl font-medium">
+            <motion.p variants={itemVariants} className="text-lg lg:text-xl text-gray-500 leading-relaxed mb-4 lg:mb-12 max-w-2xl font-medium">
               The all-in-one platform to grow your brand online. Get a secure, high-performance website with integrated payments and delivery.
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 lg:gap-5 mb-10 lg:mb-12">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 lg:gap-5 mb-5 lg:mb-12">
               <a
                 href="#"
                 className="group relative inline-flex items-center justify-center gap-3 px-8 lg:px-10 py-4 text-base font-black text-white bg-[var(--primary)] rounded-full overflow-hidden transition-all shadow-[0_20px_50px_rgba(34,99,193,0.25)] hover:scale-[1.02] active:scale-95 w-full sm:min-w-[200px]"
@@ -101,10 +108,10 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: false, amount: 0.1 }}
             transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative lg:pl-10 lg:block mt-8 lg:mt-0"
+            className="relative lg:pl-10 lg:block mt-0"
           >
-            <div className="absolute inset-[-100px] bg-indigo-500/10 blur-[130px] rounded-full pointer-events-none" />
-            <div className="relative z-10 scale-[0.85] sm:scale-100 lg:scale-100 origin-top">
+            <div className="absolute inset-[-20px] bg-indigo-500/5 blur-[80px] rounded-full pointer-events-none" />
+            <div className="relative z-10 scale-[0.95] sm:scale-100 lg:scale-100 origin-top">
               <StoreBuilderAnimation />
             </div>
           </motion.div>

@@ -34,9 +34,9 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-[#000000] text-white overflow-hidden">
+    <section id="faq" className="py-10 lg:py-24 bg-[#000000] text-white overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="mb-20 text-center">
+        <div className="mb-10 lg:mb-20 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function FAQSection() {
             <div key={index} className="border-b border-white/10">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full py-8 md:py-10 flex items-center justify-between text-left group cursor-pointer"
+                className="w-full py-6 md:py-10 flex items-center justify-between text-left group cursor-pointer"
               >
                 <span className="text-[19px] md:text-[23px] font-bold text-white leading-snug pr-8 transition-colors group-hover:text-white/70">
                   {faq.question}

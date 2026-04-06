@@ -24,7 +24,7 @@ export default function BuilderSection() {
   ];
 
   return (
-    <section id="builder" className="py-20 lg:py-28 bg-[#F8FAFC] overflow-hidden">
+    <section id="builder" className="py-10 lg:py-20 bg-[#F8FAFC] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">

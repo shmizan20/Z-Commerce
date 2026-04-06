@@ -109,13 +109,13 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="py-20 lg:py-24 bg-white overflow-hidden">
+    <section id="pricing" className="py-10 lg:py-20 bg-[#F8FAFC] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="text-center max-w-2xl mx-auto mb-10"
+          className="text-center max-w-2xl mx-auto mb-6 lg:mb-10"
         >
           <h2 className="text-3xl lg:text-4xl font-[900] text-[var(--foreground)] tracking-tight mb-3">
             Pricing Plans
@@ -130,7 +130,7 @@ export default function PricingSection() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false }}
-          className="flex items-center justify-center mb-10"
+          className="flex items-center justify-center mb-6 lg:mb-10"
         >
           <div className="inline-flex items-center p-1 bg-[#F2F5F9] rounded-full border border-[#E2E8F0]">
             <button

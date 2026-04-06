@@ -88,13 +88,13 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section id="features" className="py-24 lg:py-32 bg-white overflow-hidden">
+    <section id="features" className="py-10 lg:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10 lg:mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-5 px-4">
             Everything you need to run your business online.
