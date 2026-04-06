@@ -68,36 +68,37 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-black text-[#1A1C20] leading-[1.1] lg:leading-[1.05] tracking-tight mb-6 lg:mb-8 group">
-              Launch your{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-[#2263C1] via-indigo-600 to-purple-600 bg-clip-text text-transparent">dream</span>
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#2263C1]/40 to-purple-400/40 rounded-full opacity-30 blur-sm group-hover:opacity-70 transition-opacity duration-700" />
-              </span>{" "}
-              website in minutes.
+            <motion.h1 
+              variants={itemVariants}
+              className="text-4xl lg:text-6xl font-extrabold text-[var(--foreground)] tracking-tight leading-[1.1] mb-4 sm:mb-6"
+            >
+              Launch your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-indigo-500">dream website</span> in minutes.
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-lg lg:text-xl text-gray-500 leading-relaxed mb-4 lg:mb-12 max-w-2xl font-medium">
+            <motion.p 
+              variants={itemVariants}
+              className="text-base lg:text-lg text-[var(--muted)] leading-relaxed mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0"
+            >
               The all-in-one platform to grow your brand online. Get a secure, high-performance website with integrated payments and delivery.
             </motion.p>
 
             {/* CTAs */}
             <motion.div 
               variants={itemVariants}
-              className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-4"
+              className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2"
             >
               <a
                 href="#builder"
-                className="flex-1 sm:flex-none h-14 px-4 sm:px-8 rounded-full bg-[var(--primary)] text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-[var(--primary)]/25 whitespace-nowrap"
+                className="flex-1 sm:flex-none h-12 px-6 sm:px-10 rounded-full bg-[var(--primary)] text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-[var(--primary)]/25 whitespace-nowrap"
               >
                 Start free trial
-                <svg className="w-5 h-5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <a
                 href="#works"
-                className="flex-1 sm:flex-none h-14 px-4 sm:px-10 rounded-full bg-white text-[var(--foreground)] text-sm sm:text-base font-bold flex items-center justify-center border border-gray-200 hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all whitespace-nowrap"
+                className="flex-1 sm:flex-none h-12 px-6 sm:px-10 rounded-full bg-white text-[var(--foreground)] text-sm sm:text-base font-bold flex items-center justify-center border border-gray-200 hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all whitespace-nowrap"
               >
                 How it works
               </a>
