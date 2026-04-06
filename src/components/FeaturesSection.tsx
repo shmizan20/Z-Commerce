@@ -89,7 +89,7 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section id="features" className="py-10 lg:py-24 bg-white overflow-hidden">
+    <section id="features" className="pt-8 pb-12 lg:pt-10 lg:pb-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
