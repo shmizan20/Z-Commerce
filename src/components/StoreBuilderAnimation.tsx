@@ -276,23 +276,23 @@ export default function StoreBuilderAnimation() {
               </div>
 
               {/* Stats overview - MOBILE OPTIMIZED */}
-              <div className="grid grid-cols-2 gap-2.5 px-4 sm:px-6 mt-4">
+              <div className="grid grid-cols-2 gap-2 px-4 sm:px-6 mt-4">
                 {[
                   { label: "PRODUCTS", val: "1.2k", add: "+12", icon: "📦" },
                   { label: "CUSTOMERS", val: "4.8k", add: "+24%", icon: "💎" },
                   { label: "ORDERS", val: "850", add: "+18%", icon: "🛒" },
                   { label: "PROFIT", val: "$12k", add: "+15%", icon: "📈" },
                 ].map((s, idx) => (
-                   <div key={idx} className="bg-white rounded-xl p-3 border border-gray-100 shadow-sm flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
-                        <span className="text-base">{s.icon}</span>
+                   <div key={idx} className="bg-white rounded-xl p-2 sm:p-3 border border-gray-100 shadow-sm flex items-center gap-2">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
+                        <span className="text-sm sm:text-base">{s.icon}</span>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                          <span className="text-[8px] font-bold text-gray-400 truncate">{s.label}</span>
-                          <span className="text-[7px] font-black text-green-500 bg-green-50 px-1 py-0.5 rounded whitespace-nowrap">{s.add}</span>
+                        <div className="flex items-center justify-between gap-0.5 mb-0.5">
+                          <span className="text-[7px] sm:text-[8px] font-bold text-gray-400 truncate tracking-tight">{s.label}</span>
+                          <span className="text-[6px] sm:text-[7px] font-black text-green-500 bg-green-50 px-0.5 py-0.5 rounded whitespace-nowrap shrink-0">{s.add}</span>
                         </div>
-                        <p className="text-base font-black text-[#1A1C20] tracking-tight">{s.val}</p>
+                        <p className="text-sm sm:text-base font-black text-[#1A1C20] tracking-tight">{s.val}</p>
                       </div>
                    </div>
                 ))}
