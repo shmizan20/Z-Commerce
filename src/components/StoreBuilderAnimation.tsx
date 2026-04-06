@@ -37,7 +37,7 @@ export default function StoreBuilderAnimation() {
       {/* ── Stepper + Card stacked ── */}
       <div className={`relative ${CARD_W} px-4 flex flex-col gap-3 scale-[0.85] sm:scale-100 origin-top`}>
         {/* INTERACTIVE CLICKABLE STEPPER - FIXED OVERFLOW */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-2xl px-3 py-2.5 shadow-lg shadow-black/5 border border-white/60 z-30 flex items-center justify-between gap-1 sm:gap-3 overflow-hidden">
+        <div className="bg-white/80 backdrop-blur-xl rounded-2xl px-3 py-2.5 shadow-lg shadow-black/5 border border-white/60 z-30 flex items-center justify-between gap-2 overflow-hidden">
           {[
             { num: 1, label: "Info", icon: "📝" },
             { num: 2, label: "Integrate", icon: "🔗" },
@@ -48,7 +48,7 @@ export default function StoreBuilderAnimation() {
             const isCompleted = i < step;
             
             return (
-              <div key={s.num} className="flex items-center flex-1 justify-center last:flex-none last:justify-end">
+              <div key={s.num} className="flex items-center flex-1 justify-center">
                 <button
                   onClick={() => setStep(i)}
                   className="group flex items-center gap-1.5 outline-none"
@@ -79,7 +79,7 @@ export default function StoreBuilderAnimation() {
                   </span>
                 </button>
                 {i < 3 && (
-                  <div className={`flex-1 h-[2px] mx-1 sm:mx-2 rounded transition-all duration-700 min-w-[10px] ${i < step ? "bg-[var(--primary)]/40" : "bg-gray-200"}`} />
+                  <div className={`flex-1 h-[2px] mx-1.5 rounded transition-all duration-700 min-w-[8px] ${i < step ? "bg-[var(--primary)]/40" : "bg-gray-200"}`} />
                 )}
               </div>
             );
