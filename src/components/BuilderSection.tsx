@@ -27,7 +27,7 @@ export default function BuilderSection() {
     <section id="builder" className="relative bg-slate-50 overflow-hidden pt-10 pb-4 sm:pt-16 sm:pb-8">
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 lg:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
