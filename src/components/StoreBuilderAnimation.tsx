@@ -281,7 +281,7 @@ export default function StoreBuilderAnimation() {
                   { label: "PRODUCTS", val: "1.2k", add: "+12", icon: "📦" },
                   { label: "CUSTOMERS", val: "4.8k", add: "+24%", icon: "💎" },
                   { label: "ORDERS", val: "850", add: "+18%", icon: "🛒" },
-                  { label: "PROFIT", val: "$12k", add: "+15%", icon: "📈" },
+                  { label: "PROFIT", val: "৳ 12k", add: "+15%", icon: "📈" },
                 ].map((s, idx) => (
                    <div key={idx} className="bg-white rounded-xl p-2 sm:p-3 border border-gray-100 shadow-sm flex items-center gap-2 sm:gap-3">
                       <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
