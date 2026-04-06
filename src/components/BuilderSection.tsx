@@ -24,7 +24,7 @@ export default function BuilderSection() {
   ];
 
   return (
-    <section id="builder" className="relative bg-slate-50 overflow-hidden pt-4 pb-0 sm:pt-16 sm:pb-8">
+    <section id="builder" className="relative bg-slate-50 overflow-hidden pt-0 pb-0 sm:pt-16 sm:pb-8">
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 lg:mb-20">
