@@ -82,20 +82,22 @@ export default function HeroSection() {
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 lg:gap-5 mb-5 lg:mb-12">
+            <motion.div 
+              variants={itemVariants}
+              className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-4"
+            >
               <a
-                href="#"
-                className="group relative inline-flex items-center justify-center gap-3 px-8 lg:px-10 py-4 text-base font-black text-white bg-[var(--primary)] rounded-full overflow-hidden transition-all shadow-[0_20px_50px_rgba(34,99,193,0.25)] hover:scale-[1.02] active:scale-95 w-full sm:min-w-[200px]"
+                href="#builder"
+                className="flex-1 sm:flex-none h-14 px-4 sm:px-8 rounded-full bg-[var(--primary)] text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-[var(--primary)]/25 whitespace-nowrap"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                <span>Start free trial</span>
-                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                Start free trial
+                <svg className="w-5 h-5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <a
-                href="#how-it-works"
-                className="inline-flex items-center justify-center px-8 lg:px-10 py-4 text-base font-black text-[#1A1C20] hover:text-[var(--primary)] bg-white border-2 border-gray-100 rounded-full hover:border-[var(--primary)]/20 hover:bg-[var(--primary)]/5 transition-all hover:-translate-y-0.5 shadow-sm w-full sm:min-w-[200px]"
+                href="#works"
+                className="flex-1 sm:flex-none h-14 px-4 sm:px-10 rounded-full bg-white text-[var(--foreground)] text-sm sm:text-base font-bold flex items-center justify-center border border-gray-200 hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all whitespace-nowrap"
               >
                 How it works
               </a>
