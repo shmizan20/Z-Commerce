@@ -30,7 +30,7 @@ export default function StoreBuilderAnimation() {
   const activeStep = Math.min(step, 3);
 
   return (
-    <div className="relative w-full min-h-[300px] sm:min-h-[580px] lg:min-h-[620px] flex items-start justify-center">
+    <div className="relative w-full h-auto flex items-start justify-center">
       {/* Ambient glows */}
       <div className="absolute w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-[var(--primary)]/[0.07] via-[var(--accent)]/[0.05] to-purple-500/[0.06] rounded-full blur-[120px] animate-pulse-glow" />
 
