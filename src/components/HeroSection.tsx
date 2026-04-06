@@ -17,8 +17,8 @@ export default function HeroSection() {
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 25 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     }
@@ -27,14 +27,14 @@ export default function HeroSection() {
   return (
     <section className="relative pt-20 lg:pt-40 pb-0 overflow-hidden bg-white">
       {/* ── Stripe-style Colorful LIGHT Background ── */}
-      <div 
+      <div
         className="absolute inset-0 overflow-hidden pointer-events-none"
         style={{
           maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
           WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
         }}
       >
-        <div 
+        <div
           className="absolute inset-0 bg-white z-0"
           style={{
             background: `
@@ -50,7 +50,7 @@ export default function HeroSection() {
         <div className="absolute top-[35%] left-[-5%] w-[400px] h-[400px] bg-gradient-to-tr from-cyan-400/12 via-blue-400/8 to-transparent rounded-full blur-[90px] animate-pulse-slow" />
       </div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -58,7 +58,7 @@ export default function HeroSection() {
         className="relative max-w-7xl mx-auto px-6 lg:px-8"
       >
         <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-start">
-          
+
           <div className="max-w-xl pt-4 lg:pt-10">
             {/* Badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-full px-4 py-1.5 mb-6 lg:mb-10 shadow-sm">
@@ -68,22 +68,22 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               variants={itemVariants}
-              className="text-4xl lg:text-6xl font-extrabold text-[var(--foreground)] tracking-tight leading-[1.1] mb-4 sm:mb-6"
+              className="text-3xl lg:text-6xl font-extrabold text-[var(--foreground)] tracking-tight leading-[1.1] mb-4 sm:mb-6"
             >
               Launch your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-indigo-500">dream website</span> in minutes.
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               variants={itemVariants}
-              className="text-base lg:text-lg text-[var(--muted)] leading-relaxed mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0"
+              className="text-base lg:text-lg text-[var(--muted)] leading-relaxed mb-2 lg:mb-6 max-w-2xl mx-auto lg:mx-0"
             >
               The all-in-one platform to grow your brand online. Get a secure, high-performance website with integrated payments and delivery.
             </motion.p>
 
             {/* CTAs */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2"
             >
@@ -106,7 +106,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right - Animation section */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: false, amount: 0.1 }}
