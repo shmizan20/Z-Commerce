@@ -37,9 +37,9 @@ const features = [
     title: "Simple Pricing",
     description: "Clear and easy pricing with no confusion, so you always know what you are paying for.",
     icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fontSize="12" fontWeight="900" fill="currentColor" style={{ fontFamily: 'Arial, sans-serif' }}>৳</text>
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" strokeWidth="1.8" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 9a1 1 0 011-1h2a1 1 0 011 1v1a1 1 0 01-1 1h-2a1 1 0 00-1 1v1a1 1 0 001 1h2a1 1 0 011 1v1a1 1 0 01-1 1h-2a1 1 0 01-1-1m2-10v12" />
       </svg>
     ),
     color: "from-amber-500 to-orange-600",
