@@ -283,15 +283,15 @@ export default function StoreBuilderAnimation() {
                   { label: "ORDERS", val: "850", add: "+18%", icon: "🛒" },
                   { label: "PROFIT", val: "$12k", add: "+15%", icon: "📈" },
                 ].map((s, idx) => (
-                   <div key={idx} className="bg-white rounded-xl p-2.5 sm:p-3 border border-gray-100 shadow-sm flex items-center gap-3 sm:gap-3">
-                      <div className="w-8 h-8 sm:w-8 sm:h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
+                   <div key={idx} className="bg-white rounded-xl p-2 sm:p-3 border border-gray-100 shadow-sm flex items-center gap-2 sm:gap-3">
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
                         <span className="text-sm sm:text-base">{s.icon}</span>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-[7px] sm:text-[8px] font-bold text-gray-400 tracking-tight uppercase mb-0.5">{s.label}</p>
-                        <div className="flex items-center gap-1.5">
+                        <p className="text-[7px] sm:text-[8px] font-bold text-gray-400 tracking-tight uppercase leading-tight">{s.label}</p>
+                        <div className="flex items-center gap-1.5 mt-0.5">
                           <p className="text-sm sm:text-base font-black text-[#1A1C20] tracking-tight">{s.val}</p>
-                          <span className="text-[6px] sm:text-[7px] font-black text-green-500 bg-green-50 px-1 py-0.5 rounded whitespace-nowrap">{s.add}</span>
+                          <span className="text-[6px] sm:text-[7px] font-black text-green-600 bg-green-50 px-1 py-0.5 rounded-md whitespace-nowrap ring-1 ring-green-500/10 shrink-0">{s.add}</span>
                         </div>
                       </div>
                    </div>
